@@ -1,0 +1,23 @@
+.header {
+   padding: 5px;
+   margin: 5px 0px;
+   grid-area: h;
+   display: flex;
+   background-color: #d55845;
+   border-radius: 5px;
+   .header__logo {
+   }
+   .header__search {
+   }
+   .header__nav {
+      display: flex;
+      div {
+         margin: 5px;
+      }
+   }
+   .header__logoProfile {
+   }
+   img {
+      width: 35px;
+   }
+}

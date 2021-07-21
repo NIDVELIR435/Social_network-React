@@ -1,0 +1,26 @@
+.main__profileLeftNav {
+  padding: 5px;
+  margin-top: 80px;
+  margin-right: 20px;
+  grid-area: ml;
+  -webkit-box-shadow: chocolate;
+          box-shadow: chocolate;
+  background-color: #d55845;
+}
+
+.main__profileLeftNav__ava {
+  background-color: cadetblue;
+}
+
+.main__profileLeftNav__contacts {
+  background-color: chocolate;
+}
+
+.main__profileLeftNav__following {
+  background-color: darkcyan;
+}
+
+.main__profileLeftNav__followers {
+  background-color: darkgray;
+}
+/*# sourceMappingURL=Main_leftProfileNav.module.css.map */

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,uBAAuB,CAAC;EACrB,gBAAgB,EAAE,UAAU;CAC9B",
+    "sources": [
+        "posts.module.scss"
+    ],
+    "names": [],
+    "file": "posts.module.css"
+}

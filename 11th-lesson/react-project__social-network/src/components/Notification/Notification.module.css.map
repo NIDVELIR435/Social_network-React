@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "Notification.module.scss"
+    ],
+    "names": [],
+    "file": "Notification.module.css"
+}

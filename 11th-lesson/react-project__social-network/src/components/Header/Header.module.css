@@ -1,0 +1,25 @@
+.header {
+  padding: 5px;
+  margin: 5px 0px;
+  grid-area: h;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #d55845;
+  border-radius: 5px;
+}
+
+.header .header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header .header__nav div {
+  margin: 5px;
+}
+
+.header img {
+  width: 35px;
+}
+/*# sourceMappingURL=Header.module.css.map */

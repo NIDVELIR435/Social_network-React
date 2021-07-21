@@ -1,0 +1,22 @@
+.main__profileLeftNav {
+   padding: 5px;
+   margin-top: 80px;
+   margin-right: 20px;
+   grid-area: ml;
+   box-shadow: chocolate;
+   background-color: #d55845;
+   &__ava {
+      background-color: cadetblue;
+   }
+   &__contacts {
+      background-color: chocolate;
+   }
+   &__following {
+      background-color: darkcyan;
+   }
+   &__followers {
+      background-color: darkgray;
+   }
+   &__link-profile {
+   }
+}
