@@ -5,17 +5,26 @@
    display: flex;
    background-color: #d55845;
    border-radius: 5px;
-   .header__logo {
+   &__logo {
    }
-   .header__search {
+   &__search {
    }
-   .header__nav {
+   &__nav {
       display: flex;
       div {
+         a {
+            color: white;
+         }
+         a:focus {
+            color: gold;
+         }
+         a:active {
+            color: gold;
+         }
          margin: 5px;
       }
    }
-   .header__logoProfile {
+   &__logoProfile {
    }
    img {
       width: 35px;

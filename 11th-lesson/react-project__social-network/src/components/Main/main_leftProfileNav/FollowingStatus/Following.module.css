@@ -1,0 +1,13 @@
+.Following {
+  text-align: center;
+  font-size: larger;
+  background-color: #fff;
+  padding: 15px 0px;
+  margin-bottom: 2px;
+}
+
+.Following .FollowingName {
+  color: #aaaaac;
+  margin-bottom: 5px;
+}
+/*# sourceMappingURL=Following.module.css.map */

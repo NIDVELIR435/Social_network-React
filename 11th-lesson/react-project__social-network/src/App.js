@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter, Route, } from 'react-router-dom';
 import s from './app.module.css';
 
-import Header from './components/Header/Header.js';
+import Header from './components/Header/Header';
 import Main__LeftProfileNav from './components/Main/main_leftProfileNav/Main__LeftProfileNav.js';
 import Main__rightGridBar from './components/Main/Main__rightBar/Main__rightBar.js';
-import Messages from './components/Messages/Messages';
+import Messages from './components/Messages/Messages.jsx';
 import Main__CenterNews from './components/Main/Main__CenterNews/Main__CenterNews.js';
 import Companies from './components/Companies/Companies';
 import Projects from './components/Projects/Projects';
@@ -18,7 +18,7 @@ const App = () => {
     <BrowserRouter>
       <div className={s.background}>
         <div className={s.background__Header}>
-          <div>
+          <div className={s.container}>
             <Header />
           </div>
         </div>

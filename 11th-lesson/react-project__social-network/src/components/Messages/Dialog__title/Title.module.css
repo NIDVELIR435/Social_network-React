@@ -1,0 +1,11 @@
+.Title {
+  background-color: #d55845;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.Title .active {
+  background-color: gold;
+}
+/*# sourceMappingURL=Title.module.css.map */

@@ -1,22 +1,39 @@
-.main__profileLeftNav {
-   padding: 5px;
+.profileLeftNav {
    margin-top: 80px;
    margin-right: 20px;
    grid-area: ml;
-   box-shadow: chocolate;
-   background-color: #d55845;
-   &__ava {
-      background-color: cadetblue;
+   // background-color: white;
+   &__AvaAndName {
+      background: linear-gradient(to bottom, #d55845 50%, white 50%);
+      width: 200px;
+      height: 150px;
+      display: inline-block;
+      margin: 0px 0px 50px 0px;
+      img {
+         display: block;
+         width: 100px;
+         height: 100px;
+         overflow: hidden;
+         border-style: solid;
+         border-radius: 50px;
+         border-width: 5px;
+         border-color: white;
+         margin: 20px auto 0px auto;
+      }
+      .Name {
+         text-align: center;
+         padding: 10px;
+         h1 {
+            font-size: medium;
+            padding: 5px;
+         }
+         h3 {
+            font-size: smaller;
+         }
+      }
    }
-   &__contacts {
-      background-color: chocolate;
-   }
-   &__following {
-      background-color: darkcyan;
-   }
-   &__followers {
-      background-color: darkgray;
-   }
-   &__link-profile {
+   .Background__forAvatar{
+      background-color: white;
+      margin-bottom: 2px;
    }
 }

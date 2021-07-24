@@ -1,9 +1,26 @@
 .Dialogs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 7fr;
+      grid-template-columns: 3fr 7fr;
   background-color: white;
   padding: 5px;
-  margin-top: 80px;
+  margin-top: 20px;
   margin-right: 20px;
   margin-left: 20px;
-  grid-area: mc;
+}
+
+.Dialogs .Dialog .item {
+  background-color: #d55845;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.Dialogs .MessagesItam {
+  background-color: #d55845;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=Messages.module.css.map */

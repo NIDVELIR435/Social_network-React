@@ -1,0 +1,12 @@
+.Link {
+  text-align: center;
+  font-size: larger;
+  background-color: #fff;
+  padding: 15px 0px;
+  margin-bottom: 2px;
+}
+
+.Link a {
+  color: #d55845;
+}
+/*# sourceMappingURL=Link.module.css.map */

@@ -1,26 +1,46 @@
-.main__profileLeftNav {
-  padding: 5px;
+.profileLeftNav {
   margin-top: 80px;
   margin-right: 20px;
   grid-area: ml;
-  -webkit-box-shadow: chocolate;
-          box-shadow: chocolate;
-  background-color: #d55845;
 }
 
-.main__profileLeftNav__ava {
-  background-color: cadetblue;
+.profileLeftNav__AvaAndName {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #d55845), color-stop(50%, white));
+  background: linear-gradient(to bottom, #d55845 50%, white 50%);
+  width: 200px;
+  height: 150px;
+  display: inline-block;
+  margin: 0px 0px 50px 0px;
 }
 
-.main__profileLeftNav__contacts {
-  background-color: chocolate;
+.profileLeftNav__AvaAndName img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-style: solid;
+  border-radius: 50px;
+  border-width: 5px;
+  border-color: white;
+  margin: 20px auto 0px auto;
 }
 
-.main__profileLeftNav__following {
-  background-color: darkcyan;
+.profileLeftNav__AvaAndName .Name {
+  text-align: center;
+  padding: 10px;
 }
 
-.main__profileLeftNav__followers {
-  background-color: darkgray;
+.profileLeftNav__AvaAndName .Name h1 {
+  font-size: medium;
+  padding: 5px;
+}
+
+.profileLeftNav__AvaAndName .Name h3 {
+  font-size: smaller;
+}
+
+.profileLeftNav .Background__forAvatar {
+  background-color: white;
+  margin-bottom: 2px;
 }
 /*# sourceMappingURL=Main_leftProfileNav.module.css.map */
