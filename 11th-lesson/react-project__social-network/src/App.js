@@ -4,16 +4,17 @@ import s from './app.module.css';
 
 import Header from './components/Header/Header';
 import Main__LeftProfileNav from './components/Main/main_leftProfileNav/Main__LeftProfileNav.js';
-import Main__rightGridBar from './components/Main/Main__rightBar/Main__rightBar.js';
+import Main__rightGridBar from './components/Main/Main__rightBar/Main__rightBar.js'
+
 import Messages from './components/Messages/Messages.jsx';
-import Main__CenterNews from './components/Main/Main__CenterNews/Main__CenterNews.js';
+import MainCenter from './components/Main/Main__Center/Main__centerNews/Main__CenterNews';
 import Companies from './components/Companies/Companies';
 import Projects from './components/Projects/Projects';
 import Jobs from './components/Jobs/Jobs';
 import Notification from './components/Notification/Notification';
 import Profile from './components/Profile/Profile';
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className={s.background}>
@@ -23,16 +24,21 @@ const App = () => {
           </div>
         </div>
         <div className={s.container}>
-          <Main__LeftProfileNav />
+          <Main__LeftProfileNav Dialogs={props.AppState.Suggestions} />
           <Main__rightGridBar />
           <div className={s.Center__styles}>
-            <Route path='/Messages' component={Messages} />
-            <Route path='/Home' component={Main__CenterNews} />
-            <Route path='/Companies' component={Companies} />
-            <Route path='/Projects' component={Projects} />
-            <Route path='/Jobs' component={Jobs} />
-            <Route path='/Notification' component={Notification} />
-            <Route path='/Profile' component={Profile} />
+            <Route path='/Messages'
+              render={() => (<Messages Dialogs={props.AppState.Messages.Dialogs}
+                Titles={props.AppState.Messages.Titles} AddPost2={props.AddPost2}/>)} />
+            <Route path='/Home'
+              render={() => (<MainCenter 
+              HomePagesPost={props.AppState.HomePagesPosts}
+                AddPost={props.AddPost} />)} />
+            <Route path='/Companies' render={Companies} />
+            <Route path='/Projects' render={Projects} />
+            <Route path='/Jobs' render={Jobs} />
+            <Route path='/Notification' render={Notification} />
+            <Route path='/Profile' render={Profile} />
           </div>
         </div>
       </div>

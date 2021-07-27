@@ -1,12 +1,11 @@
 import React from "react";
 import c from "./Main__rightBar.module.css";
+import TopJobs from "./topJobs/TopJobs";
 
 const Main__rightGridBar = () => {
    return (
       <div className={c.main__rightBar}>
-         <div className={c.main__rightBar__topJobs}>
-            <p> here place for top jobs</p>
-         </div>
+         <TopJobs jobs='Senior Product designer' />
       </div>
    )
 };

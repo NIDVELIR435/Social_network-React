@@ -6,13 +6,15 @@ import { NavLink } from 'react-router-dom';
 const Header = () => {
    return (
       <header className={c.header}>
-         <div className={c.header__logo}>
-            <img src={logo} alt="logo" />
+        <div className={c.LogoAndSearch}>
+            <div className={c.logo}>
+               <img src={logo} alt="logo" />
+            </div>
+            <div className={c.Search}>
+            
+        </div>   <input type="text"></input>
          </div>
-         <div className={c.header__search}>
-            <input type="text"></input>
-         </div>
-         <div className={c.header__nav}>
+         <div className={c.Nav}>
             <div><NavLink to="/Home" ActiveClassName={c.active}>Home</NavLink></div>
             <div><NavLink to="/Companies" ActiveClassName={c.active}>Companies</NavLink></div>
             <div><NavLink to="/Projects" ActiveClassName={c.active}>Projects</NavLink></div>
@@ -20,8 +22,9 @@ const Header = () => {
             <div><NavLink to="/Jobs" ActiveClassName={c.active}>Jobs</NavLink></div>
             <div><NavLink to="/Messages" ActiveClassName={c.active}>Messages</NavLink></div>
             <div><NavLink to="/Notificatiom" ActiveClassName={c.active}>Notification</NavLink></div>
+            {/* <div className={c.logoProfile}></div> */}
          </div>
-         <div className={c.Header_logoProfile}></div>
+         
       </header >
    )
 };

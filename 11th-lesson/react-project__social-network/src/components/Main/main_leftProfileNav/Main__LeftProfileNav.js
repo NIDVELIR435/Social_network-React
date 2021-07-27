@@ -6,7 +6,7 @@ import Followers from './FollofersStatus/Followers';
 import Link from './Link/Link';
 import Suggestions from './Suggestions/Suggestions';
 
-const LeftGridProfile = () => {
+const LeftGridProfile = (props) => {
    return (
       <div className={c.profileLeftNav}>
          <div className={c.Background__forAvatar}>
@@ -21,7 +21,7 @@ const LeftGridProfile = () => {
          <Following canc="130" />
          <Followers canc="23" />
          <Link />
-         <Suggestions />
+         <Suggestions Titles={props.Dialogs}/>
       </div>
    )
 };

@@ -2,17 +2,14 @@ import React from 'react'
 import People from './PeopleList/People';
 import c from './Suggestions.module.css';
 
-const Suggestions = () => {
+const Suggestions = (props) => {
    return (
       <div className={c.Suggestions}>
          <div className={c.Name}>
             Suggestions
          </div>
          <div>
-            <People name='Victoria' />
-            <People name='Victoria' />
-            <People name='Victoria' />
-            <People name='Victoria' />
+            <People Titles={props.Titles}/>
          </div>
       </div>
    )

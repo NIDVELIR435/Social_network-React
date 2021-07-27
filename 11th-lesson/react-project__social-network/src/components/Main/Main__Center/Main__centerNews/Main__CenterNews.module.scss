@@ -1,33 +1,16 @@
-.Dialogs {
-   display: grid;
-   grid-template-columns: 3fr 7fr;
-   background-color: white;
+.News {
    padding: 5px;
-   margin-top: 20px;
+   margin-top: 10px;
    margin-right: 20px;
    margin-left: 20px;
-   .Dialog {
-      // border-right-width: 5px;
-      // border-right-color: #d55845;
-      .item {
-         background-color: #d55845;
-         margin: 10px;
-         padding: 10px;
-         border-radius: 5px;
-         .avatar {
-         }
-         .name {
-         }
-      }
-   }
-   .Messages {
-      .InputArea {
+   grid-area: mc;
+      .newNews {
          display: flex;
          background-color: #fd8674bd;
          margin: 10px;
          padding: 10px;
          border-radius: 5px;
-         textarea {
+         textarea{
             resize: none;
             width: 100%;
             border-radius: 5px;
@@ -41,5 +24,10 @@
             padding: 10px;
          }
       }
+   .button {
+      //background-color: #fd8674;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 5px;
    }
 }

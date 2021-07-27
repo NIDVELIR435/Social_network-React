@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EACf,OAAO,EAAE,GAAG;EACZ,UAAU,EAAE,IAAI;EAChB,YAAY,EAAE,IAAI;EAClB,WAAW,EAAE,IAAI;EAEjB,SAAS,EAAE,EAAE;EACb,gBAAgB,EAAE,KAAK;CAIzB",
-    "sources": [
-        "Main__CenterNews.module.scss"
-    ],
-    "names": [],
-    "file": "Main__CenterNews.module.css"
-}

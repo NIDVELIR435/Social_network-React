@@ -17,10 +17,28 @@
   border-radius: 5px;
 }
 
-.Dialogs .MessagesItam {
-  background-color: #d55845;
+.Dialogs .Messages .InputArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fd8674bd;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
+}
+
+.Dialogs .Messages .InputArea textarea {
+  resize: none;
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.Dialogs .Messages .InputArea button {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  width: 100px;
+  margin: 5px 0px 5px 5px;
+  padding: 10px;
 }
 /*# sourceMappingURL=Messages.module.css.map */

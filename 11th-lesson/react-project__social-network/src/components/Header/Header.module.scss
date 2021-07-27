@@ -3,14 +3,23 @@
    margin: 5px 0px;
    grid-area: h;
    display: flex;
+   align-items: center;
+   justify-content: space-between;
    background-color: #d55845;
    border-radius: 5px;
-   &__logo {
-   }
-   &__search {
-   }
-   &__nav {
+   .LogoAndSearch {
       display: flex;
+      .Logo {
+       
+      }
+      .Search {
+       
+      }
+   }
+
+   .Nav {
+      display: flex;
+      padding: 0px 0px;
       div {
          a {
             color: white;
@@ -24,7 +33,7 @@
          margin: 5px;
       }
    }
-   &__logoProfile {
+   .logoProfile {
    }
    img {
       width: 35px;
