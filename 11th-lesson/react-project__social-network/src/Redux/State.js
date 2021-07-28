@@ -1,69 +1,161 @@
-import Suggestions from "../components/Main/main_leftProfileNav/Suggestions/Suggestions";
-import { RerenderEntireTree } from './RerenderPage';
-
-let State = {
-   Messages: {
-      Dialogs: [
-         { id: 1, message: 'Hello, nice to meet you!' },
-         { id: 2, message: 'Hello, nice to meet you!' },
-         { id: 1, message: 'Hello, nice to meet you!' },
-         { id: 2, message: 'Hello, nice to meet you!' },
-         { id: 1, message: 'Hello, nice to meet you!' },
-         { id: 2, message: 'Hello, nice to meet you!' },
+let Store = {
+   _State: {
+      Messages: {
+         Dialogs: [
+            { id: 1, message: 'Hello, nice to meet you!' },
+            { id: 2, message: 'Hello, nice to meet you!' },
+            { id: 1, message: 'Hello, nice to meet you!' },
+            { id: 2, message: 'Hello, nice to meet you!' },
+            { id: 1, message: 'Hello, nice to meet you!' },
+            { id: 2, message: 'Hello, nice to meet you!' },
+         ],
+         Titles: [
+            { path: 1, name: 'Yaroslav' },
+            { path: 2, name: 'Victor' },
+            { path: 3, name: 'Lesya' },
+            { path: 4, name: 'Dima' },
+            { path: 5, name: 'Masha' },
+         ],
+         NewPostText: "value for posts",
+      },
+      Suggestions: [
+         { name: 'Yaroslav' },
+         { name: 'Victor' },
+         { name: 'Lesya' },
+         { name: 'Dima' },
+         { name: 'Masha' },
       ],
-      Titles: [
-         { path: 1, name: 'Yaroslav' },
-         { path: 2, name: 'Victor' },
-         { path: 3, name: 'Lesya' },
-         { path: 4, name: 'Dima' },
-         { path: 5, name: 'Masha' },
+      HomePagesNewPosts: [
+         { Message: "Hi, How are you", LikeCount: '4' },
+         { Message: 'It`s my first post', LikeCount: "1" },
+         { Message: 'It`s my second post', LikeCount: "2" }
       ],
-      NewPostText: "value for posts",
+      TextAreaCenterNewsValue: 'TextAreaCenterNewsValue',
    },
-   Suggestions: [
-      { name: 'Yaroslav' },
-      { name: 'Victor' },
-      { name: 'Lesya' },
-      { name: 'Dima' },
-      { name: 'Masha' },
-   ],
-   HomePagesPosts: [
-      { Message: "Hi, How are you", LikeCount: '4' },
-      { Message: 'It`s my first post', LikeCount: "1" },
-      { Message: 'It`s my second post', LikeCount: "2" }
-   ],
+   getState() {
+      return this._State;
+   },
+   _RerenderEntireTree() {
+   },
+   Action(newRerender) {
+      return (
+         this._RerenderEntireTree = newRerender
+      )
+   },
+   UpgradeNewPostText(newText) {
+      return (
+         Store._State.Messages.NewPostText = (newText),
+         this._RerenderEntireTree()
+      )
+   },
+   AddPostForMessage(PostMessage) {
+      let NewPost = {
+         id: 4,
+         Message: PostMessage,
+      };
+      return (
+         this._State.Messages.Dialogs.push(NewPost),
+         this._RerenderEntireTree()
+      )
+   },
+   AddPostCenterNews(PostMessage) {
+      let NewPost = {
+         Message: PostMessage,
+         LikeCount: '0'
+      };
+      return (
+         this._State.HomePagesNewPosts.push(NewPost),
+         this._State.TextAreaCenterNewsValue = (''),
+         this._RerenderEntireTree(this._State)
+      )
+   },
+   ChangedTextForButtonCenter(ChangeText) {
+      return (
+         this._State.TextAreaCenterNewsValue = (ChangeText),
+         this._RerenderEntireTree(this._State)
+      )
+   },
 }
+export default Store;
 
-export let UpgradeNewPostText = (newText) => {
-   
-   return (
-      State.Messages.NewPostText = (newText),
-      RerenderEntireTree(State)
-   )
-};
-
-export let AddPostForMessage = (PostMessage) => {
-   debugger;
-   let NewPost = {
-      id: 5,
-      Message: {PostMessage},
-   };
-   return (
-      State.Messages.Dialogs.push(NewPost),
-      RerenderEntireTree(State)
-   )
-};
-
-export let AddPost = (PostMessage) => {
-   let NewPost = {
-      Message: PostMessage,
-      LikeCount: '0'
-   };
-   return (
-      State.HomePagesPosts.push(NewPost),
-      RerenderEntireTree(State)
-   )
-};
+// let RerenderEntireTree = () => {
+// };
 
 
-export default State;
+
+
+
+// export const Action = (newRerender) => {
+//    return (
+//       RerenderEntireTree = newRerender
+//    )
+// };
+
+// let State = {
+//    Messages: {
+//       Dialogs: [
+//          { id: 1, message: 'Hello, nice to meet you!' },
+//          { id: 2, message: 'Hello, nice to meet you!' },
+//          { id: 1, message: 'Hello, nice to meet you!' },
+//          { id: 2, message: 'Hello, nice to meet you!' },
+//          { id: 1, message: 'Hello, nice to meet you!' },
+//          { id: 2, message: 'Hello, nice to meet you!' },
+//       ],
+//       Titles: [
+//          { path: 1, name: 'Yaroslav' },
+//          { path: 2, name: 'Victor' },
+//          { path: 3, name: 'Lesya' },
+//          { path: 4, name: 'Dima' },
+//          { path: 5, name: 'Masha' },
+//       ],
+//       NewPostText: "value for posts",
+//    },
+//    Suggestions: [
+//       { name: 'Yaroslav' },
+//       { name: 'Victor' },
+//       { name: 'Lesya' },
+//       { name: 'Dima' },
+//       { name: 'Masha' },
+//    ],
+//    HomePagesNewPosts: [
+//       { Message: "Hi, How are you", LikeCount: '4' },
+//       { Message: 'It`s my first post', LikeCount: "1" },
+//       { Message: 'It`s my second post', LikeCount: "2" }
+//    ],
+//    TextAreaCenterNewsValue: 'TextAreaCenterNewsValue',
+// }
+
+// export let UpgradeNewPostText = (newText) => {
+//    return (
+//       State.Messages.NewPostText = (newText),
+//       RerenderEntireTree()
+//    )
+// };
+
+// export let AddPostForMessage = (PostMessage) => {
+//    let NewPost = {
+//       id: 4,
+//       Message: PostMessage,
+//    };
+//    return (
+//       State.Messages.Dialogs.push(NewPost),
+//       RerenderEntireTree()
+//    )
+// };
+// export let AddPostCenterNews = (PostMessage) => {
+//    let NewPost = {
+//       Message: PostMessage,
+//       LikeCount: '0'
+//    };
+//    return (
+//       State.HomePagesNewPosts.push(NewPost),
+//       State.TextAreaCenterNewsValue = (''),
+//       RerenderEntireTree(State)
+//    )
+// };
+// export let ChangedTextForButtonCenter = (ChangeText) => {
+//    return (
+//       State.TextAreaCenterNewsValue = (ChangeText),
+//       RerenderEntireTree(State)
+//    )
+// };

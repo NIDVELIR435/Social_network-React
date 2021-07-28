@@ -11,14 +11,11 @@ const Messages = (props) => {
    let TextArea = React.createRef();
 
    let ButtonOnClick = () => {
-      debugger;
       let Text = TextArea.current.value;
       props.AddPostForMessage(Text);
-      props.UpgradeNewPostText('');
 
    }
    let OnPostChange = () => {
-     
       let Text = TextArea.current.value;
       props.UpgradeNewPostText(Text)
    }

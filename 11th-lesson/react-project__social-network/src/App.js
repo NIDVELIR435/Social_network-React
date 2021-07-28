@@ -5,7 +5,6 @@ import s from './app.module.css';
 import Header from './components/Header/Header';
 import Main__LeftProfileNav from './components/Main/main_leftProfileNav/Main__LeftProfileNav.js';
 import Main__rightGridBar from './components/Main/Main__rightBar/Main__rightBar.js'
-
 import Messages from './components/Messages/Messages.jsx';
 import MainCenter from './components/Main/Main__Center/Main__centerNews/Main__CenterNews';
 import Companies from './components/Companies/Companies';
@@ -13,7 +12,7 @@ import Projects from './components/Projects/Projects';
 import Jobs from './components/Jobs/Jobs';
 import Notification from './components/Notification/Notification';
 import Profile from './components/Profile/Profile';
-
+debugger;
 const App = (props) => {
   return (
     <BrowserRouter>
@@ -37,8 +36,10 @@ const App = (props) => {
               />)} />
             <Route path='/Home'
               render={() => (<MainCenter
-                HomePagesPost={props.AppState.HomePagesPosts}
-                AddPost={props.AddPost} />)} />
+                ChangedTextForButtonCenter={props.ChangedTextForButtonCenter}
+                HomePagesNewPosts={props.AppState.HomePagesNewPosts}
+                AddPostCenterNews={props.AddPostCenterNews}
+                AppState={props.AppState} />)} />
             <Route path='/Companies' render={Companies} />
             <Route path='/Projects' render={Projects} />
             <Route path='/Jobs' render={Jobs} />
