@@ -1,5 +1,5 @@
 import Suggestions from "../components/Main/main_leftProfileNav/Suggestions/Suggestions";
-import { RerenderEntireTree} from './RerenderPage';
+import { RerenderEntireTree } from './RerenderPage';
 
 let State = {
    Messages: {
@@ -17,7 +17,8 @@ let State = {
          { path: 3, name: 'Lesya' },
          { path: 4, name: 'Dima' },
          { path: 5, name: 'Masha' },
-      ]
+      ],
+      NewPostText: "value for posts",
    },
    Suggestions: [
       { name: 'Yaroslav' },
@@ -33,16 +34,26 @@ let State = {
    ],
 }
 
-export let AddPost2 = (PostMessage2) => {
-   let NewMessage = {
-      id: 0,
-      message: PostMessage2,
-   };
+export let UpgradeNewPostText = (newText) => {
+   
    return (
-      State.Messages.Dialogs.push(NewMessage),
-   RerenderEntireTree(State)
+      State.Messages.NewPostText = (newText),
+      RerenderEntireTree(State)
    )
 };
+
+export let AddPostForMessage = (PostMessage) => {
+   debugger;
+   let NewPost = {
+      id: 5,
+      Message: {PostMessage},
+   };
+   return (
+      State.Messages.Dialogs.push(NewPost),
+      RerenderEntireTree(State)
+   )
+};
+
 export let AddPost = (PostMessage) => {
    let NewPost = {
       Message: PostMessage,
@@ -50,8 +61,9 @@ export let AddPost = (PostMessage) => {
    };
    return (
       State.HomePagesPosts.push(NewPost),
-   RerenderEntireTree(State)
+      RerenderEntireTree(State)
    )
 };
+
 
 export default State;

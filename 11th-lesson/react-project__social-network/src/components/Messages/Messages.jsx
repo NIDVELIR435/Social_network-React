@@ -9,11 +9,19 @@ const Messages = (props) => {
    let Dialog = props.Dialogs.map(d => <Dialog__item message={d.message} className={d.id} />)
 
    let TextArea = React.createRef();
-   let ButtonOnClick = () => {
-      let Text = TextArea.current.value;
-      props.AddPost2(Text);
-   }
 
+   let ButtonOnClick = () => {
+      debugger;
+      let Text = TextArea.current.value;
+      props.AddPostForMessage(Text);
+      props.UpgradeNewPostText('');
+
+   }
+   let OnPostChange = () => {
+     
+      let Text = TextArea.current.value;
+      props.UpgradeNewPostText(Text)
+   }
    return (
       <div className={s.Dialogs}>
          <div class={s.Dialog}>
@@ -22,8 +30,13 @@ const Messages = (props) => {
          <div class={s.Messages}>
             {Dialog}
             <div className={s.InputArea}>
-               <textarea ref={TextArea} className={s.Input} placeholder="Area for add you new messages">
-               </textarea>
+
+               <textarea
+                  ref={TextArea}
+                  className={s.Input}
+                  placeholder="Area for add you new messages"
+                  value={props.NewPostText}
+                  onChange={OnPostChange} />
                <div className={s.button}>
                   <button onClick={ButtonOnClick}>Add message</button>
                </div>

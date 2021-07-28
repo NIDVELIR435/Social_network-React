@@ -28,11 +28,16 @@ const App = (props) => {
           <Main__rightGridBar />
           <div className={s.Center__styles}>
             <Route path='/Messages'
-              render={() => (<Messages Dialogs={props.AppState.Messages.Dialogs}
-                Titles={props.AppState.Messages.Titles} AddPost2={props.AddPost2}/>)} />
+              render={() => (<Messages
+                Dialogs={props.AppState.Messages.Dialogs}
+                Titles={props.AppState.Messages.Titles} AddPost2={props.AddPost2}
+                NewPostText={props.AppState.Messages.NewPostText}
+                UpgradeNewPostText={props.UpgradeNewPostText}
+                AddPostForMessage={props.AddPostForMessage}
+              />)} />
             <Route path='/Home'
-              render={() => (<MainCenter 
-              HomePagesPost={props.AppState.HomePagesPosts}
+              render={() => (<MainCenter
+                HomePagesPost={props.AppState.HomePagesPosts}
                 AddPost={props.AddPost} />)} />
             <Route path='/Companies' render={Companies} />
             <Route path='/Projects' render={Projects} />
