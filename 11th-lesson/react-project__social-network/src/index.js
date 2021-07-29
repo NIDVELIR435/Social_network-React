@@ -3,18 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Store from './Redux/State'; //export function from Add new Post
+import Store from './Redux/Store'; //export function from Add new Post
 
-debugger;
 let RerenderEntireTree = () => {
    ReactDOM.render(
       <React.StrictMode>
          <App
-            ChangedTextForButtonCenter={Store.ChangedTextForButtonCenter}
+            ChangedTextForButtonCenter={Store.ChangedTextForButtonCenter.bind(Store)}
             AppState={Store.getState()}
-            AddPostCenterNews={Store.AddPostCenterNews}
-            UpgradeNewPostText={Store.UpgradeNewPostText}
-            AddPostForMessage={Store.AddPostForMessage} />
+            AddPostCenterNews={Store.AddPostCenterNews.bind(Store)}
+            dispatch={Store.dispatch.bind(Store)}
+            //AddPostForMessage={Store.AddPostForMessage.bind(Store)} 
+            />
       </React.StrictMode>,
       document.querySelector('#root')
    );

@@ -12,7 +12,6 @@ import Projects from './components/Projects/Projects';
 import Jobs from './components/Jobs/Jobs';
 import Notification from './components/Notification/Notification';
 import Profile from './components/Profile/Profile';
-debugger;
 const App = (props) => {
   return (
     <BrowserRouter>
@@ -31,8 +30,8 @@ const App = (props) => {
                 Dialogs={props.AppState.Messages.Dialogs}
                 Titles={props.AppState.Messages.Titles} AddPost2={props.AddPost2}
                 NewPostText={props.AppState.Messages.NewPostText}
-                UpgradeNewPostText={props.UpgradeNewPostText}
-                AddPostForMessage={props.AddPostForMessage}
+                dispatch={props.dispatch}
+                //AddPostForMessage={props.AddPostForMessage}
               />)} />
             <Route path='/Home'
               render={() => (<MainCenter

@@ -12,12 +12,14 @@ const Messages = (props) => {
 
    let ButtonOnClick = () => {
       let Text = TextArea.current.value;
-      props.AddPostForMessage(Text);
+      // props.AddPostForMessage(Text);
+      props.dispatch({ type: 'ADD_POST_FOR_MESSAGE_BLOCK', text: Text })
 
    }
    let OnPostChange = () => {
       let Text = TextArea.current.value;
-      props.UpgradeNewPostText(Text)
+      //props.UpgradeNewPostText(Text)
+      props.dispatch({ type: 'UPGRADE_NEW_POST_TEXT_MESSAGE_BLOCK', text: Text})
    }
    return (
       <div className={s.Dialogs}>

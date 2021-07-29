@@ -32,42 +32,37 @@ let Store = {
       ],
       TextAreaCenterNewsValue: 'TextAreaCenterNewsValue',
    },
+   _RerenderEntireTree() {
+   },
    getState() {
       return this._State;
-   },
-   _RerenderEntireTree() {
    },
    Action(newRerender) {
       return (
          this._RerenderEntireTree = newRerender
       )
    },
-   UpgradeNewPostText(newText) {
-      return (
-         Store._State.Messages.NewPostText = (newText),
-         this._RerenderEntireTree()
-      )
-   },
-   AddPostForMessage(PostMessage) {
-      let NewPost = {
-         id: 4,
-         Message: PostMessage,
-      };
-      return (
-         this._State.Messages.Dialogs.push(NewPost),
-         this._RerenderEntireTree()
-      )
-   },
+   // UpgradeNewPostText(newText) {
+   //    return (Store._State.Messages.NewPostText = (newText),
+   //       this._RerenderEntireTree()
+   //    )
+   // },
+   // AddPostForMessage(PostMessage) {
+   //    let NewPost = {
+   //       id: 4,
+   //       Message: PostMessage,
+   //    };
+   //    return this._State.Messages.Dialogs.push(NewPost),
+   //       this._RerenderEntireTree()
+   // },
    AddPostCenterNews(PostMessage) {
       let NewPost = {
          Message: PostMessage,
          LikeCount: '0'
       };
-      return (
-         this._State.HomePagesNewPosts.push(NewPost),
+      return this._State.HomePagesNewPosts.push(NewPost),
          this._State.TextAreaCenterNewsValue = (''),
          this._RerenderEntireTree(this._State)
-      )
    },
    ChangedTextForButtonCenter(ChangeText) {
       return (
@@ -75,7 +70,23 @@ let Store = {
          this._RerenderEntireTree(this._State)
       )
    },
+   dispatch(action) {
+      if (action.type === 'ADD_POST_FOR_MESSAGE_BLOCK') {
+         let NewPost = {
+            id: 4,
+            Message: action.text,
+         };
+         return this._State.Messages.Dialogs.push(NewPost)
+            this._RerenderEntireTree()
+      } else if (action.type === 'UPGRADE_NEW_POST_TEXT_MESSAGE_BLOCK') {
+         return (
+            Store._State.Messages.NewPostText = (action.Text),
+            this._RerenderEntireTree()
+         )
+      }
+   }
 }
+
 export default Store;
 
 // let RerenderEntireTree = () => {
