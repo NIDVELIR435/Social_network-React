@@ -1,0 +1,29 @@
+.Main {
+   display: grid;
+   grid-template-columns: 4fr 0.5fr;
+   grid-template-areas: " l r";
+   max-height: 50px;
+   overflow: hidden;
+   .Text {
+      grid-area: l;
+      text-align: left;
+      font-size: larger;
+      background-color: #fff;
+      padding: 5px 5px 5px 7px;
+      .Name {
+         padding-bottom: 2px;
+      }
+      .Discription {
+         font-size: x-small;
+         color: #8d8c8c;
+      }
+   }
+   .Price {
+      grid-area: r;
+      text-align: center;
+      font-size: smaller;
+      background-color: #fff;
+      padding: 10px 10px 10px 0px;
+      margin-bottom: 2px;
+   }
+}

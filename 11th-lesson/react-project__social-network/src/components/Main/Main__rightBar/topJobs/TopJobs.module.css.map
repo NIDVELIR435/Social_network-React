@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,KAAK,CAAC;EACH,UAAU,EAAE,MAAM;EAClB,SAAS,EAAE,MAAM;EACjB,gBAAgB,EAAE,IAAI;EACtB,OAAO,EAAE,SAAS;EAClB,aAAa,EAAE,GAAG;CACpB",
-    "sources": [
-        "TopJobs.module.scss"
-    ],
-    "names": [],
-    "file": "TopJobs.module.css"
-}

@@ -1,19 +1,18 @@
 import React from "react";
 import c from "./Main__CenterNews.module.css";
-
 import Post from "../posts/new post/posts"
-
+import { ADD_POST_FOR_HOME_BLOCK_, UPGRADE_CURRENT_TEXT_HOME_BLOCK_ } from '../../../../Redux/Store'
 const CenterNews = (props) => {
    let Posts = props.HomePagesNewPosts.map(d => <Post Message={d.Message} LikeCount={d.LikeCount} />)
    let NewPostCreate = React.createRef();
 
    let OnButtonClick_AddPost = () => {
-      let text = NewPostCreate.current.value
-      props.AddPostCenterNews(text);
+      let Text = NewPostCreate.current.value
+      props.dispatch(ADD_POST_FOR_HOME_BLOCK_(Text));
    };
    let onPostChange = () => {
-      let text = NewPostCreate.current.value
-      props.ChangedTextForButtonCenter(text);
+      let Text = NewPostCreate.current.value
+      props.dispatch(UPGRADE_CURRENT_TEXT_HOME_BLOCK_(Text));
    };
 
    return (

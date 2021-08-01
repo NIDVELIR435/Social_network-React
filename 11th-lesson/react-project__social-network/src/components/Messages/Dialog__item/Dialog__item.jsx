@@ -3,7 +3,7 @@ import c from './Dialog__item.module.css';
 
 const Dialog__item = (props) => {
    return (
-      <div className={c.item}>
+      <div id={props.id} className={c.item}>
          {props.message}
       </div>
    )

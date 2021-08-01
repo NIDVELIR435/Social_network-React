@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACG,KADE,CACF,WAAW,CAAC;EACT,UAAU,EAAE,MAAM;EAClB,SAAS,EAAE,MAAM;EACjB,gBAAgB,EAAE,IAAI;EACtB,OAAO,EAAE,SAAS;EAClB,aAAa,EAAE,GAAG;CAOpB;;AAbJ,AASM,KATD,CACF,WAAW,CAQR,EAAE,CAAC;EACA,SAAS,EAAE,OAAO;EAClB,KAAK,EAAE,OAAO;CAChB",
+    "sources": [
+        "Main__rightBar__Jobs.module.scss"
+    ],
+    "names": [],
+    "file": "Main__rightBar__Jobs.module.css"
+}

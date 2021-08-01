@@ -4,23 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Store from './Redux/Store'; //export function from Add new Post
+import { BrowserRouter } from 'react-router-dom';
 
 let RerenderEntireTree = () => {
    ReactDOM.render(
       <React.StrictMode>
-         <App
-            ChangedTextForButtonCenter={Store.ChangedTextForButtonCenter.bind(Store)}
-            AppState={Store.getState()}
-            AddPostCenterNews={Store.AddPostCenterNews.bind(Store)}
-            dispatch={Store.dispatch.bind(Store)}
-            //AddPostForMessage={Store.AddPostForMessage.bind(Store)} 
-            />
+        <BrowserRouter>
+            <App
+               AppState={Store.getState()}
+               dispatch={Store.dispatch.bind(Store)} />
+        </BrowserRouter>
       </React.StrictMode>,
       document.querySelector('#root')
    );
 };
 RerenderEntireTree(Store.getState());
-Store.Action(RerenderEntireTree);
+Store.Rerender(RerenderEntireTree);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -1,0 +1,40 @@
+.Main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 4fr 0.5fr;
+      grid-template-columns: 4fr 0.5fr;
+      grid-template-areas: " l r";
+  max-height: 50px;
+  overflow: hidden;
+}
+
+.Main .Text {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: l;
+  text-align: left;
+  font-size: larger;
+  background-color: #fff;
+  padding: 5px 5px 5px 7px;
+}
+
+.Main .Text .Name {
+  padding-bottom: 2px;
+}
+
+.Main .Text .Discription {
+  font-size: x-small;
+  color: #8d8c8c;
+}
+
+.Main .Price {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: r;
+  text-align: center;
+  font-size: smaller;
+  background-color: #fff;
+  padding: 10px 10px 10px 0px;
+  margin-bottom: 2px;
+}
+/*# sourceMappingURL=TopJobs.module.css.map */

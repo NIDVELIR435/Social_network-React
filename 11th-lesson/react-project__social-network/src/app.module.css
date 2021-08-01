@@ -23,10 +23,9 @@ body .background .container {
   margin: 0px auto;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "h h h" "ml mc r";
-  -ms-grid-columns: 2fr 10fr;
-      grid-template-columns: 2fr 10fr;
-  /* grid-gap: 10px; */
+      grid-template-areas: "h h h" "ml mc mr";
+  -ms-grid-columns: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 3fr 1fr;
 }
 
 * {

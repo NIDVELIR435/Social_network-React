@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,eAAe,CAAC;EACb,OAAO,EAAE,eAAe;EACxB,UAAU,EAAE,IAAI;EAChB,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,CAAC;CAId",
+    "mappings": "AAAA,AAAA,eAAe,CAAC;EACb,OAAO,EAAE,eAAe;EACxB,UAAU,EAAE,IAAI;EAChB,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,EAAE;EACb,KAAK,EAAE,GAAG;CAEZ",
     "sources": [
         "Main__rightBar.module.scss"
     ],
