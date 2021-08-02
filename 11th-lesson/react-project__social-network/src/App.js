@@ -13,6 +13,7 @@ import Jobs from './components/Jobs/Jobs';
 import Notification from './components/Notification/Notification';
 import Profile from './components/Profile/Profile';
 const App = (props) => {
+ // debugger;
   return (
     <div className={s.background}>
       <div className={s.background__Header}>
@@ -21,20 +22,19 @@ const App = (props) => {
         </div>
       </div>
       <div className={s.container}>
-        <Main__LeftProfileNav Dialogs={props.AppState.Suggestions} />
+        <Main__LeftProfileNav Dialogs={props.AppState.listSuggestionForPeopleJSX.Suggestions} />
         <Main__rightGridBar />
         <div className={s.Center__styles}>
           <Route path='/Messages'
             render={() => (<Messages
-              Dialogs={props.AppState.Messages.Dialogs}
-              Titles={props.AppState.Messages.Titles} 
-              AddPost2={props.AddPost2}
-              NewPostText={props.AppState.NewPostText}
+              Dialogs={props.AppState.MessageBlockReducer.Dialogs}
+              Titles={props.AppState.listTitlesName_forMessages.Titles}
+              NewPostText={props.AppState.MessageBlockReducer.NewPostText}
               dispatch={props.dispatch}
             />)} />
           <Route path='/Home'
             render={() => (<MainCenter
-              HomePagesNewPosts={props.AppState.HomePagesNewPosts}
+              HomePagesNewPosts={props.AppState.HomeBlockReducer.HomePagesNewPosts}
               dispatch={props.dispatch}
               AppState={props.AppState} />)} />
           <Route path='/Companies' render={Companies} />

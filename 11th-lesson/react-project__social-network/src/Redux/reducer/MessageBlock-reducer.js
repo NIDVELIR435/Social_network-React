@@ -10,14 +10,27 @@ export const UPGRADE_CURRENT_TEXT_MESSAGE_BLOCK_ = (Text) => ({
    UpgradeText: Text
 });
 
-let MessageBlockReducer = (State, action) => {
+let initiallState = {
+   Dialogs: [
+      { id: 1, message: 'Hello, nice to meet you!' },
+      { id: 2, message: 'Hello, nice to meet you!' },
+      { id: 3, message: 'Hello, nice to meet you!' },
+      { id: 4, message: 'Hello, nice to meet you!' },
+      { id: 5, message: 'Hello, nice to meet you!' },
+      { id: 6, message: 'Hello, nice to meet you!' },
+   ],
+   NewPostText: "value for posts",
+};
+
+let MessageBlockReducer = (State = initiallState, action) => {
+   //debugger;
    switch (action.type) {
       case ADD_POST_FOR_MESSAGE_BLOCK:
          let NewPost = {
             id: 7,
             message: action.TextForNewPost,
          };
-         State.Messages.Dialogs.push(NewPost);
+         State.Dialogs.push(NewPost);
          State.NewPostText = ('');
          return State;
       case UPGRADE_CURRENT_TEXT_MESSAGE_BLOCK:
@@ -27,7 +40,7 @@ let MessageBlockReducer = (State, action) => {
       default:
          return State;
    }
-  
+
 }
 
 export default MessageBlockReducer;

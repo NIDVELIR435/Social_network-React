@@ -14,14 +14,14 @@ const CenterNews = (props) => {
       let Text = NewPostCreate.current.value
       props.dispatch(UPGRADE_CURRENT_TEXT_HOME_BLOCK_(Text));
    };
-
+//debugger;
    return (
       <div className={c.News}>
          <div className={c.newNews}>
             <textarea
                ref={NewPostCreate}
                className={c.Input}
-               value={props.AppState.TextAreaCenterNewsValue}
+               value={props.AppState.HomeBlockReducer.TextAreaCenterNewsValue}
                placeholder="Area for add you new post"
                onChange={onPostChange}
             />

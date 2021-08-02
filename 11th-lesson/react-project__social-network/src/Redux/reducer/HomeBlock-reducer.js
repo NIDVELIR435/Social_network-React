@@ -9,9 +9,18 @@ export const ADD_POST_FOR_HOME_BLOCK_ = (Text) => ({
 export const UPGRADE_CURRENT_TEXT_HOME_BLOCK_ = (Text) => ({
    type: UPGRADE_CURRENT_TEXT_HOME_BLOCK,
    UpgradeText: Text,
-});
+})
 
-let HomeBlockReducer = (State, action) => {
+let initialState = {
+   HomePagesNewPosts: [
+      { Message: "Hi, How are you", LikeCount: '4' },
+      { Message: 'It`s my first post', LikeCount: "1" },
+      { Message: 'It`s my second post', LikeCount: "2" }
+   ],
+   TextAreaCenterNewsValue: 'TextAreaCenterNewsValue'
+};
+
+let HomeBlockReducer = (State = initialState, action) => {
    switch (action.type) {
       case ADD_POST_FOR_HOME_BLOCK:
          let NewPost = {
