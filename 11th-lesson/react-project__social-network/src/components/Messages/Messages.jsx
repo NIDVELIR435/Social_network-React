@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Messages.module.css'; //export module style for this component
 import Dialog__item from './Dialog__item/Dialog__item';
 import Title_item from './Dialog__title/Title.js';
-import { ADD_POST_FOR_MESSAGE_BLOCK_, UPGRADE_CURRENT_TEXT_MESSAGE_BLOCK_ } from '../../Redux/Store'
+import { ADD_POST_FOR_MESSAGE_BLOCK_, UPGRADE_CURRENT_TEXT_MESSAGE_BLOCK_ } from '../../Redux/reducer/MessageBlock-reducer.js'
 
 const Messages = (props) => {
    let Title = props.Titles.map(d => <Title_item path={d.path} name={d.name} />)

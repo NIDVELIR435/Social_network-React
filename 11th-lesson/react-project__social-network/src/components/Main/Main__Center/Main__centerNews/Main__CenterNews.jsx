@@ -1,7 +1,7 @@
 import React from "react";
 import c from "./Main__CenterNews.module.css";
 import Post from "../posts/new post/posts"
-import { ADD_POST_FOR_HOME_BLOCK_, UPGRADE_CURRENT_TEXT_HOME_BLOCK_ } from '../../../../Redux/Store'
+import { ADD_POST_FOR_HOME_BLOCK_, UPGRADE_CURRENT_TEXT_HOME_BLOCK_ } from '../../../../Redux/reducer/HomeBlock-reducer'
 const CenterNews = (props) => {
    let Posts = props.HomePagesNewPosts.map(d => <Post Message={d.Message} LikeCount={d.LikeCount} />)
    let NewPostCreate = React.createRef();

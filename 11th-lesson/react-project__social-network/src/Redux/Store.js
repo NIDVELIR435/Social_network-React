@@ -1,25 +1,6 @@
-const ADD_POST_FOR_MESSAGE_BLOCK = 'ADD_POST_FOR_MESSAGE_BLOCK';
-const UPGRADE_CURRENT_TEXT_MESSAGE_BLOCK = 'UPGRADE_CURRENT_TEXT_MESSAGE_BLOCK';
-const ADD_POST_FOR_HOME_BLOCK = 'ADD_POST_FOR_HOME_BLOCK';
-const UPGRADE_CURRENT_TEXT_HOME_BLOCK = 'UPGRADE_CURRENT_TEXT_HOME_BLOCK';
-
-
-export const ADD_POST_FOR_MESSAGE_BLOCK_ = (Text) => ({
-   type: ADD_POST_FOR_MESSAGE_BLOCK,
-   TextForNewPost: Text
-});
-export const UPGRADE_CURRENT_TEXT_MESSAGE_BLOCK_ = (Text) => ({
-   type: UPGRADE_CURRENT_TEXT_MESSAGE_BLOCK,
-   UpgradeText: Text
-});
-export const ADD_POST_FOR_HOME_BLOCK_ = (Text) => ({
-   type: ADD_POST_FOR_HOME_BLOCK,
-   NewPostMessage: Text
-});
-export const UPGRADE_CURRENT_TEXT_HOME_BLOCK_ = (Text) => ({
-   type: UPGRADE_CURRENT_TEXT_HOME_BLOCK,
-   UpgradeText: Text,
-});
+// import MessageBlockReducer from './reducer/MessageBlock-reducer.js';
+import MessageBlockReducer from './reducer/MessageBlock-reducer';
+import HomeBlockReducer from './reducer/HomeBlock-reducer';
 
 let Store = {
    _State: {
@@ -60,41 +41,15 @@ let Store = {
    getState() {
       return this._State;
    },
-   Rerender(newRerender) {
+   subscribe(newRerender) {
       return (
          this._RerenderEntireTree = newRerender
       )
    },
    dispatch(action) {
-      if (action.type === ADD_POST_FOR_MESSAGE_BLOCK) {
-         let NewPost = {
-            id: 7,
-            message: action.TextForNewPost,
-         }
-         return (
-            this._State.Messages.Dialogs.push(NewPost),
-            this._State.NewPostText = (''),
-            this._RerenderEntireTree()
-         )
-      } else if (action.type === UPGRADE_CURRENT_TEXT_MESSAGE_BLOCK) {
-         return (
-            this._State.NewPostText = (action.UpgradeText),
-            this._RerenderEntireTree()
-         )
-      } else if (action.type === ADD_POST_FOR_HOME_BLOCK) {
-         let NewPost = {
-            Message: action.NewPostMessage,
-            LikeCount: '0'
-         };
-         return this._State.HomePagesNewPosts.push(NewPost),
-            this._State.TextAreaCenterNewsValue = (''),
-            this._RerenderEntireTree(this._State)
-      } else if (action.type === UPGRADE_CURRENT_TEXT_HOME_BLOCK) {
-         return (
-            this._State.TextAreaCenterNewsValue = (action.UpgradeText),
-            this._RerenderEntireTree(this._State)
-         )
-      }
+      this._State = MessageBlockReducer(this._State, action);
+      this._State = HomeBlockReducer(this._State, action);
+      this._RerenderEntireTree()
    }
 }
 
