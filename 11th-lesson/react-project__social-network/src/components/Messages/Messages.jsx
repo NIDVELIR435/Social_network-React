@@ -2,22 +2,18 @@ import React from 'react';
 import s from './Messages.module.css'; //export module style for this component
 import Dialog__item from './Dialog__item/Dialog__item';
 import Title_item from './Dialog__title/Title.js';
-import { ADD_POST_FOR_MESSAGE_BLOCK_, UPGRADE_CURRENT_TEXT_MESSAGE_BLOCK_ } from '../../Redux/reducer/MessageBlock-reducer.js'
 
 const Messages = (props) => {
    let Title = props.Titles.map(d => <Title_item path={d.path} name={d.name} />)
    let Dialog = props.Dialogs.map(d => <Dialog__item message={d.message} className={d.id} />)
-
    let TextArea = React.createRef();
-
    let Button_AddPost_MessagesBlock = () => {
       let Text = TextArea.current.value;
-      props.dispatch(ADD_POST_FOR_MESSAGE_BLOCK_(Text));
-
+      props.ToContainer__Button_AddPost_MessagesBlock(Text);
    }
    let OnPostChange = () => {
       let Text = TextArea.current.value;
-      props.dispatch(UPGRADE_CURRENT_TEXT_MESSAGE_BLOCK_(Text));
+      props.ToContainer__OnPostChange(Text);
    }
    return (
       <div className={s.Dialogs}>
@@ -32,7 +28,7 @@ const Messages = (props) => {
                   ref={TextArea}
                   className={s.Input}
                   placeholder="Area for add you new messages"
-                  value={props.NewPostText}
+                  value={props.OutContainer}
                   onChange={OnPostChange} />
                <div className={s.button}>
                   <button onClick={Button_AddPost_MessagesBlock}>Add message</button>

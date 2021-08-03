@@ -7,15 +7,11 @@ import Store from './Redux/reduxStore'; //import redux Store from module redux
 import { BrowserRouter } from 'react-router-dom';
 
 let RerenderEntireTree = (state) => {
-
    ReactDOM.render(
       <React.StrictMode>
          <BrowserRouter>
             <App
-               AppState={
-                  state
-                  // Store.getState()
-               }
+               ReduxStore={state}
                dispatch={Store.dispatch.bind(Store)} />
          </BrowserRouter>
       </React.StrictMode>,

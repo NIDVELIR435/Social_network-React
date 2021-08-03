@@ -17,7 +17,7 @@ let initialState = {
       { Message: 'It`s my first post', LikeCount: "1" },
       { Message: 'It`s my second post', LikeCount: "2" }
    ],
-   TextAreaCenterNewsValue: 'TextAreaCenterNewsValue'
+   TextAreaCenterNewsValue: 'TextAreaCenterNewsHomeValue'
 };
 
 let HomeBlockReducer = (State = initialState, action) => {

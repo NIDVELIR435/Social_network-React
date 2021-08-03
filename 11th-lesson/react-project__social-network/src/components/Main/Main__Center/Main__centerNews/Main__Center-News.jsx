@@ -1,36 +1,33 @@
 import React from "react";
 import c from "./Main__CenterNews.module.css";
-import Post from "../posts/new post/posts"
-import { ADD_POST_FOR_HOME_BLOCK_, UPGRADE_CURRENT_TEXT_HOME_BLOCK_ } from '../../../../Redux/reducer/HomeBlock-reducer'
-const CenterNews = (props) => {
-   let Posts = props.HomePagesNewPosts.map(d => <Post Message={d.Message} LikeCount={d.LikeCount} />)
-   let NewPostCreate = React.createRef();
+import Post from "../posts/posts.jsx"
 
+const CenterNews = (props) => {
+   let Posts = props.OutContainerPost.map(d => <Post Message={d.Message} LikeCount={d.LikeCount} />)
+   let NewPostCreate = React.createRef();
    let OnButtonClick_AddPost = () => {
       let Text = NewPostCreate.current.value
-      props.dispatch(ADD_POST_FOR_HOME_BLOCK_(Text));
+      props.ToContainerOnButtonClick_AddPost(Text);
    };
    let onPostChange = () => {
+      debugger;
       let Text = NewPostCreate.current.value
-      props.dispatch(UPGRADE_CURRENT_TEXT_HOME_BLOCK_(Text));
+      props.ToContainerOnPostChange(Text);
    };
-//debugger;
    return (
       <div className={c.News}>
          <div className={c.newNews}>
             <textarea
                ref={NewPostCreate}
                className={c.Input}
-               value={props.AppState.HomeBlockReducer.TextAreaCenterNewsValue}
+               value={props.OutContainerCurrentValue}
                placeholder="Area for add you new post"
-               onChange={onPostChange}
-            />
+               onChange={onPostChange} />
             <div className={c.button}>
                <button onClick={OnButtonClick_AddPost}>Add post</button>
             </div>
          </div>
          {Posts}
-
       </div>
    )
 };
