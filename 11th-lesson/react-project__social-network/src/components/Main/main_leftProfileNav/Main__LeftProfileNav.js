@@ -21,8 +21,9 @@ const LeftGridProfile = (props) => {
          <Following canc="130" />
          <Followers canc="23" />
          <Link />
-         <Suggestions Titles={props.Dialogs}/>
+         <Suggestions Titles={props.Dialogs} />
       </div>
+
    )
 };
 

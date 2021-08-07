@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-pascal-case */
 import React from 'react';
-import { Route, } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import s from './app.module.css';
 
 import Header from './components/Header/Header';
@@ -15,7 +15,6 @@ import Notification from './components/Notification/Notification';
 import Profile from './components/Profile/Profile';
 
 const App = (props) => {
- // debugger;
   return (
     <div className={s.background}>
       <div className={s.background__Header}>
@@ -24,18 +23,21 @@ const App = (props) => {
         </div>
       </div>
       <div className={s.container}>
-        <Main__LeftProfileNav Dialogs={props.ReduxStore.listSuggestionForPeopleJSX.Suggestions} />
+        {/* <Main__LeftProfileNav 
+        //Dialogs={props.ReduxStore.listSuggestionForPeopleJSX.Suggestions} 
+        /> */}
         <Main__rightGridBar />
         <div className={s.Center__styles}>
           <Route path='/Messages'
             render={() => (<Container__Messages
-              ReduxStore={props.ReduxStore}
-              dispatch={props.dispatch}
+              //ReduxStore={props.ReduxStore}
+              //dispatch={props.dispatch}
             />)} />
           <Route path='/Home'
             render={() => (<Container__CenterNews
-              dispatch={props.dispatch}
-              ReduxStore={props.ReduxStore} />)} />
+              //dispatch={props.dispatch}
+              //ReduxStore={props.ReduxStore}
+              />)} />
           <Route path='/Companies' render={Companies} />
           <Route path='/Projects' render={Projects} />
           <Route path='/Jobs' render={Jobs} />

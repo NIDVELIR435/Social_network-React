@@ -10,7 +10,7 @@ export const UPGRADE_CURRENT_TEXT_MESSAGE_BLOCK_ = (Text) => ({
    UpgradeText: Text
 });
 
-let initiallState = {
+let initialState = {
    Dialogs: [
       { id: 1, message: 'Hello, nice to meet you!' },
       { id: 2, message: 'Hello, nice to meet you!' },
@@ -22,21 +22,30 @@ let initiallState = {
    NewPostText: "value for posts",
 };
 
-let MessageBlockReducer = (State = initiallState, action) => {
+let MessageBlockReducer = (State = initialState, action) => {
    //debugger;
+   let StateCopy;            
    switch (action.type) {
       case ADD_POST_FOR_MESSAGE_BLOCK:
          let NewPost = {
             id: 7,
             message: action.TextForNewPost,
          };
-         State.Dialogs.push(NewPost);
-         State.NewPostText = ('');
-         return State;
+         StateCopy = {
+            ...State,                                  //i`m push to newState my State properties || 48 lesson
+            Dialogs: [...State.Dialogs, NewPost],
+            NewPostText: ''
+         }
+         //StateCopy.Dialogs.push(NewPost);
+         //StateCopy.NewPostText = ('');
+         return StateCopy;
       case UPGRADE_CURRENT_TEXT_MESSAGE_BLOCK:
-         State.NewPostText = (action.UpgradeText);
-         return State;
-
+         StateCopy = {
+            ...State,                                 //i`m push to newState my State properties || 48 lesson
+            NewPostText: action.UpgradeText,
+         }
+         //StateCopy.NewPostText = (action.UpgradeText);
+         return StateCopy;
       default:
          return State;
    }

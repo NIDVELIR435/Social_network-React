@@ -3,26 +3,34 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Store from './Redux/reduxStore'; //import redux Store from module redux
+import store from './Redux/reduxStore';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-let RerenderEntireTree = (state) => {
-   ReactDOM.render(
-      <React.StrictMode>
-         <BrowserRouter>
+// let RerenderEntireTree = (
+// state
+// ) => {
+ReactDOM.render(
+   <React.StrictMode>
+      <BrowserRouter>
+         <Provider store={store}>
             <App
-               ReduxStore={state}
-               dispatch={Store.dispatch.bind(Store)} />
-         </BrowserRouter>
-      </React.StrictMode>,
-      document.querySelector('#root')
-   );
-};
-RerenderEntireTree(Store.getState());
-Store.subscribe(() => {
-   let state = Store.getState();
-   RerenderEntireTree(state);
-});
+            // ReduxStore={state}
+            // dispatch={Store.dispatch.bind(Store)}
+            />
+         </Provider>
+      </BrowserRouter>
+   </React.StrictMode>,
+   document.querySelector('#root')
+);
+// };
+// RerenderEntireTree(
+//    store.getState()
+// );
+//Store.subscribe(() => {                             <-i`m put away my function with loading my store(my redux)
+//let state = Store.getState();
+//RerenderEntireTree(state);
+//});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
