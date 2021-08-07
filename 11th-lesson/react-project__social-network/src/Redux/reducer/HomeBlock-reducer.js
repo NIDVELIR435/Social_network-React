@@ -21,30 +21,32 @@ let initialState = {
 };
 
 let HomeBlockReducer = (State = initialState, action) => {
-   let StateCopy;
+   // let StateCopy;
    switch (action.type) {
       case ADD_POST_FOR_HOME_BLOCK:
          let NewPost = {
             Message: action.NewPostMessage,
             LikeCount: '0'
          };
-         StateCopy = {
+         // StateCopy = 
+         return {
             ...State,                                          //i`m create newState for my ReactRedux module 48 lesson
             HomePagesNewPosts: [...State.HomePagesNewPosts, NewPost],
             TextAreaCenterNewsValue: '',
 
          }
-         // StateCopy.HomePagesNewPosts.push(NewPost);
-         // StateCopy.TextAreaCenterNewsValue = ('');
-         return StateCopy;
+      // StateCopy.HomePagesNewPosts.push(NewPost);
+      // StateCopy.TextAreaCenterNewsValue = ('');
+      // return StateCopy;
       case UPGRADE_CURRENT_TEXT_HOME_BLOCK:
-         StateCopy = {
+         // StateCopy = 
+         return {
             ...State,                                          //i`m create newState for my ReactRedux module 48 lesson
             TextAreaCenterNewsValue: action.UpgradeText,
 
          }
-         // StateCopy.TextAreaCenterNewsValue = (action.UpgradeText);
-         return StateCopy;
+      // StateCopy.TextAreaCenterNewsValue = (action.UpgradeText);
+      // return StateCopy;
       default:
          return State;
    }
