@@ -23,29 +23,30 @@ let initialState = {
 };
 
 let MessageBlockReducer = (State = initialState, action) => {
-   //debugger;
-   let StateCopy;            
+   // let StateCopy;                                   
    switch (action.type) {
       case ADD_POST_FOR_MESSAGE_BLOCK:
          let NewPost = {
             id: 7,
             message: action.TextForNewPost,
          };
-         StateCopy = {
+         // StateCopy = 
+         return {
             ...State,                                  //i`m push to newState my State properties || 48 lesson
             Dialogs: [...State.Dialogs, NewPost],
             NewPostText: ''
          }
-         //StateCopy.Dialogs.push(NewPost);
-         //StateCopy.NewPostText = ('');
-         return StateCopy;
+      //StateCopy.Dialogs.push(NewPost);
+      //StateCopy.NewPostText = ('');
+      // return StateCopy;
       case UPGRADE_CURRENT_TEXT_MESSAGE_BLOCK:
-         StateCopy = {
+         // StateCopy = 
+         return {
             ...State,                                 //i`m push to newState my State properties || 48 lesson
             NewPostText: action.UpgradeText,
          }
-         //StateCopy.NewPostText = (action.UpgradeText);
-         return StateCopy;
+      //StateCopy.NewPostText = (action.UpgradeText);
+      // return StateCopy;
       default:
          return State;
    }
