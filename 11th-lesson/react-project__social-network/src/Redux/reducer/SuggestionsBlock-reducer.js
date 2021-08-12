@@ -9,8 +9,8 @@ let initialState = {
    ]
 };
 
-let listSuggestionForPeopleJSX = (State = initialState, action) => {
+let listSuggestionForPeople = (State = initialState, action) => {
    return State;
    }
 
-export default listSuggestionForPeopleJSX;
+export default listSuggestionForPeople;

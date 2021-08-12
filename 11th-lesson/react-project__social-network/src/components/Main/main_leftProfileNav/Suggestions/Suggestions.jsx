@@ -9,7 +9,7 @@ const Suggestions = (props) => {
             Suggestions
          </div>
          <div>
-            <People Titles={props.Titles} />
+            <People Suggestions={props.Suggestions} />
          </div>
       </div>
    )

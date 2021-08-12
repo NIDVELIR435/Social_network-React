@@ -1,0 +1,43 @@
+.cardItem {
+   display: grid;
+   grid-template-columns: 1fr 6fr;
+   background-color: #f2f2f2;
+   margin: 10px;
+   padding: 10px;
+   border-radius: 5px;
+   border-width: 1px;
+   border-style: solid;
+   border-color: rgba(0, 0, 0, 0.226);
+}
+.avatar {
+   width: 75px;
+   height: 75px;
+   border-radius: 50px;
+   background-color: #d55845;
+   padding: 23px;
+   margin: 2px;
+}
+.text {
+   margin: 2px;
+   text-align: center;
+}
+.name {
+   display: flex;
+   color: #7dbcb3;
+   font-size: x-large;
+   justify-content: center;
+   .firstName {
+      margin: 2px 2px;
+   }
+   .lastName {
+      margin: 2px 2px;
+   }
+}
+.status {
+   margin: 10px;
+   padding: 5px;
+   font-size: small;
+   background-color: #fff;
+   border-radius: 0px 15px 15px 15px;
+   min-height: 50px;
+}

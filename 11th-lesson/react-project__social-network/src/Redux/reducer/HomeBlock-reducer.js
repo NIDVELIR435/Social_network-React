@@ -45,10 +45,10 @@ let HomeBlockReducer = (State = initialState, action) => {
             TextAreaCenterNewsValue: action.UpgradeText,
 
          }
-      // StateCopy.TextAreaCenterNewsValue = (action.UpgradeText);
-      // return StateCopy;
+         // StateCopy.TextAreaCenterNewsValue = (action.UpgradeText);
+         // return StateCopy;
       default:
-         return State;
+      return State;
    }
 }
 
