@@ -25,17 +25,10 @@ const App = () => {
       </div>
       <div className={s.container}>
         <Main__leftProfileNav_container />
-        {/* <Main__LeftProfileNav 
-        //ReduxStore={props.ReduxStore}
-        //dispatch={props.dispatch}
-        //Dialogs={props.ReduxStore.listSuggestionForPeopleJSX.Suggestions} 
-        /> */}
         <Main__rightGridBar />
         <div className={s.Center__styles}>
-          <Route path='/Messages'
-            render={() => (<Container__Messages />)} />
-          <Route path='/Home'
-            render={() => (<Container__CenterNews />)} />
+          <Route path='/Messages' render={() => (<Container__Messages />)} />
+          <Route path='/Home' render={() => (<Container__CenterNews />)} />
           <Route path='/Companies' render={Companies} />
           <Route path='/Projects' render={Projects} />
           <Route path='/Jobs' render={Jobs} />
