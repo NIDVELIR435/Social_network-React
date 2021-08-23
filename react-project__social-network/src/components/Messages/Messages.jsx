@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import React from 'react';
 import s from './Messages.module.css'; //export module style for this component
 import Dialog__item from './Dialog__item/Dialog__item';
@@ -7,6 +8,7 @@ const Messages = (props) => {
    let Title = props.Titles.map(d => <Title_item path={d.path} name={d.name} />)
    let Dialog = props.Dialogs.map(d => <Dialog__item message={d.message} className={d.id} />)
    let TextArea = React.createRef();
+   
    let Button_AddPost_MessagesBlock = () => {
       let Text = TextArea.current.value;
       props.ToContainer__Button_AddPost_MessagesBlock(Text);

@@ -3,10 +3,17 @@ import c from './findUsers.module.css';
 import UsersItem from './find_users_container/users__item/users__item';
 
 const findUsers = (props) => {
-   // debugger;
+   // <UsersItem follow={props.follow} unfollow={props.unfollow} />
+   let UsersItemCard = props.users.map(u => <UsersItem 
+      id={u.id} avatar={u.avatar} firstName={u.firstName} 
+      lastName={u.lastName} previewtext={u.previewtext} 
+      country={u.location.country} town={u.location.town} 
+      followed={u.followed} follow={props.follow}
+      unfollow={props.unfollow}/>)
+
    return (
       <div className={c.gridArea}>
-         <UsersItem UsersPage={props.users} />
+         {UsersItemCard}
       </div>
    )
 };

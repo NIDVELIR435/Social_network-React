@@ -9,35 +9,66 @@
    border-style: solid;
    border-color: rgba(0, 0, 0, 0.226);
 }
-.avatar {
-   width: 75px;
-   height: 75px;
-   border-radius: 50px;
-   background-color: #d55845;
-   padding: 23px;
-   margin: 2px;
+.left_column {
+   .avatar {
+      width: 75px;
+      height: 75px;
+      border-radius: 50px;
+      background-color: #d55845;
+      padding: 23px 0px;
+      margin: 2px;
+   }
+   .button {
+      text-align: center;
+      padding: 5px;
+      button {
+         padding: 3px 0px;
+         width: 75px;
+         border-radius: 5px;
+      }
+      .Follow {
+         background-color: #79D79C;
+      }
+      .Unfollow {
+         background-color: #649CE5;
+      }
+   }
 }
 .text {
    margin: 2px;
    text-align: center;
-}
-.name {
-   display: flex;
-   color: #7dbcb3;
-   font-size: x-large;
-   justify-content: center;
-   .firstName {
-      margin: 2px 2px;
+
+   .name {
+      display: flex;
+      color: #7dbcb3;
+      font-size: x-large;
+      justify-content: center;
+      .firstName {
+         margin: 2px 2px;
+      }
+      .lastName {
+         margin: 2px 2px;
+      }
    }
-   .lastName {
-      margin: 2px 2px;
+   .status {
+      margin: 10px;
+      padding: 5px;
+      font-size: small;
+      color: #070e0dbd;
+      background-color: #fff;
+      border-radius: 0px 15px 15px 15px;
+      min-height: 50px;
    }
-}
-.status {
-   margin: 10px;
-   padding: 5px;
-   font-size: small;
-   background-color: #fff;
-   border-radius: 0px 15px 15px 15px;
-   min-height: 50px;
+   .location {
+      display: flex;
+      justify-content: end;
+      margin: 0px 10px;
+      color: #1f616dcb;
+      .country {
+         margin: 0px 5px;
+      }
+      .town {
+         margin: 0px 5px;
+      }
+   }
 }

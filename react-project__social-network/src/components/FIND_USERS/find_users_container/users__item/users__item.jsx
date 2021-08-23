@@ -3,18 +3,34 @@ import c from './users__item.module.css'
 
 const UsersItem = (props) => {
    return (
-      < div >
+      < div id={props.id}>
          <div className={c.cardItem}>
-            <div className={c.avatar}>
-               avatar
+            <div className={c.left_column}>
+               <div className={c.avatar}>
+                  {props.avatar}
+               </div>
+               <div className={c.button}>
+                  {props.followed
+                  
+                     ? <button className={c.Follow}onClick={() => { props.unfollow(props.id) }}> You follow</button>
+                     : <button className={c.Unfollow} onClick={() => { props.follow(props.id) }}>Follow</button>}
+               </div>
             </div>
             <div className={c.text}>
                <div className={c.name}>
-                  <div className={c.firstName}>Name</div>
-                  <div className={c.lastName}>Surname</div>
+                  <div className={c.firstName}>{props.firstName}</div>
+                  <div className={c.lastName}>{props.lastName}</div>
                </div>
                <div className={c.status}>
-                  current status
+                  {props.previewtext}
+               </div>
+               <div className={c.location}>
+                  <div className={c.country}>
+                     {props.country},
+                  </div>
+                  <div className={c.town}>
+                     {props.town}
+                  </div>
                </div>
             </div>
          </div>

@@ -1,12 +1,16 @@
 const FOLLOW = 'FOLLOW';
-const UNFOLLOW = 'UNFOLLOW';
+const UN_FOLLOW = 'UN_FOLLOW';
 const SET_USERS = 'SET_USERS';
 
 
 let initialState = {
    UsersForFindUsersPageList: [
-      { id: 1, avatar: 'avatarLink', firstName: 'Misha', lastName: 'Gurin', previewtext: 'I`m looking for a new emloy right now', location: { county: 'Ukraine', town: 'Dnipro' }, followed: true },
-      { id: 2, avatar: 'avatarLink', firstName: 'Dasha', lastName: 'Gukova', previewtext: 'I`m looking for a new emloy right now', location: { county: 'Ukraine', town: 'Dnipro' }, followed: true }
+      { id: 1, avatar: 'avatarLink', firstName: 'Misha', lastName: 'Gurin', previewtext: 'I`m looking for a new emloy right now', location: { country: 'Ukraine', town: 'Dnipro' }, followed: true, },
+      { id: 2, avatar: 'avatarLink', firstName: 'Dasha1', lastName: 'Gukova', previewtext: 'Hello)', location: { country: 'Ukraine', town: 'Dnipro' }, followed: true, },
+      { id: 3, avatar: 'avatarLink', firstName: 'Dasha2', lastName: 'Gukova', previewtext: 'I`m looking for a new emloy right now', location: { country: 'Ukraine', town: 'Kiev' }, followed: true, },
+      { id: 4, avatar: 'avatarLink', firstName: 'Dasha3', lastName: 'Gukova', previewtext: 'I`m looking for a new emloy right now', location: { country: 'Ukraine', town: 'Kharkov' }, followed: false, },
+      { id: 5, avatar: 'avatarLink', firstName: 'Dasha4', lastName: 'Gukova', previewtext: 'I`m looking for a new emloy right now', location: { country: 'Ukraine', town: 'Zaporizhya' }, followed: false, },
+      { id: 6, avatar: 'avatarLink', firstName: 'Dasha5', lastName: 'Gukova', previewtext: 'I`m looking for a new emloy right now', location: { country: 'Ukraine', town: 'Donetck' }, followed: false, },
    ]
 };
 
@@ -22,7 +26,7 @@ let UsersForFindUsersPage = (state = initialState, action) => {
                return u;
             })
          }
-      case UNFOLLOW:
+      case UN_FOLLOW:
          return {
             ...state,
             UsersForFindUsersPageList: state.UsersForFindUsersPageList.map(u => {
@@ -40,7 +44,7 @@ let UsersForFindUsersPage = (state = initialState, action) => {
 };
 
 export const FollowAC = (UserId) => ({ type: FOLLOW, UserId });               //Follow action creator
-export const UnFollowAC = (UserId) => ({ type: UNFOLLOW, UserId });           //unFollow action creator
+export const UnFollowAC = (UserId) => ({ type: UN_FOLLOW, UserId });           //unFollow action creator
 export const SetUsersAC = (Users) => ({ type: SET_USERS, Users });            //set new user from server action creator
 
 
