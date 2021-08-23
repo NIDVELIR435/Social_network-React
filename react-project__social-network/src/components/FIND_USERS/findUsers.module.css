@@ -1,4 +1,18 @@
-.gridArea {
+.main {
+  padding: 10px;
+}
+
+.main input {
+  margin: 5px;
+  width: 98.5%;
+  height: 30px;
+  text-align: center;
+  border: 1px solid #F2F2F2;
+  background-color: #F2F2F2;
+  border-radius: 5px;
+}
+
+.main .gridArea {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;

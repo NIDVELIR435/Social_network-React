@@ -1,4 +1,16 @@
-.gridArea {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
+.main {
+   padding: 10px;
+   input{
+      margin: 5px;
+      width: 98.5%;
+      height: 30px;
+      text-align: center;
+      border: 1px solid #F2F2F2;
+      background-color: #F2F2F2;
+      border-radius: 5px;
+   }
+   .gridArea {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+   }
 }

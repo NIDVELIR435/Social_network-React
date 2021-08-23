@@ -2,7 +2,7 @@
    display: grid;
    grid-template-columns: 1fr 6fr;
    background-color: #f2f2f2;
-   margin: 10px;
+   margin: 5px;
    padding: 10px;
    border-radius: 5px;
    border-width: 1px;
@@ -14,23 +14,27 @@
       width: 75px;
       height: 75px;
       border-radius: 50px;
-      background-color: #d55845;
-      padding: 23px 0px;
+      // background-color: #d55845;
+      // padding: 23px 0px;
       margin: 2px;
+      img {
+         width: 75px;
+         height: 75px;
+      }
    }
    .button {
       text-align: center;
-      padding: 5px;
+      padding-top: 15px;
       button {
          padding: 3px 0px;
          width: 75px;
          border-radius: 5px;
       }
       .Follow {
-         background-color: #79D79C;
+         background-color: #79d79c;
       }
       .Unfollow {
-         background-color: #649CE5;
+         background-color: #649ce5;
       }
    }
 }

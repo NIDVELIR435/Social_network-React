@@ -1,18 +1,22 @@
 import React from 'react';
 import c from './users__item.module.css'
-
+// import * as axios from 'axios';
+import UserPhoto from '../../../images/user.png';
 const UsersItem = (props) => {
+   // axios.get('').then(response => {
+   // props.setUsers(response.data.items)}
+   // );   
    return (
       < div id={props.id}>
          <div className={c.cardItem}>
             <div className={c.left_column}>
                <div className={c.avatar}>
-                  {props.avatar}
+                  <img src={props.avatar != null ? props.avatar : UserPhoto} />
                </div>
                <div className={c.button}>
                   {props.followed
-                  
-                     ? <button className={c.Follow}onClick={() => { props.unfollow(props.id) }}> You follow</button>
+
+                     ? <button className={c.Follow} onClick={() => { props.unfollow(props.id) }}> You follow</button>
                      : <button className={c.Unfollow} onClick={() => { props.follow(props.id) }}>Follow</button>}
                </div>
             </div>
