@@ -4,6 +4,7 @@ import { FollowAC, SetUsersAC, UnFollowAC } from '../../../Redux/reducer/UsersFo
 import findUsers from '../findUsers'
 
 let StateToProps = (state) => {
+   debugger;
    return {
       users: state.UsersPage.UsersForFindUsersPageList
    }

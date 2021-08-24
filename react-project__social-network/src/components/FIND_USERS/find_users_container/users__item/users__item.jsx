@@ -1,11 +1,7 @@
 import React from 'react';
 import c from './users__item.module.css'
-// import * as axios from 'axios';
 import UserPhoto from '../../../images/user.png';
 const UsersItem = (props) => {
-   // axios.get('').then(response => {
-   // props.setUsers(response.data.items)}
-   // );   
    return (
       < div id={props.id}>
          <div className={c.cardItem}>
