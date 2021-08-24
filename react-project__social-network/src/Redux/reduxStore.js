@@ -11,7 +11,7 @@ let _reducers = combineReducers({ //combine ours redusers from redux store
    listSuggestionForPeople: listSuggestionForPeople,
    MessageBlockReducer: MessageBlockReducer,
    HomeBlockReducer: HomeBlockReducer,
-   UsersPage: UsersForFindUsersPage
+   UsersPageReducer: UsersForFindUsersPage,
 });
 let Store = createStore(_reducers); //create redux Store and pass him combined reducer
 
