@@ -5,15 +5,17 @@ import UsersItem from './find_users_container/users__item/users__item';
 
 
 class FindUsers extends React.Component {
-   constructor(props) {
-      super(props);
-
+   componentDidMount() {
+      // debugger;
       axios.get("http://localhost:3000/UsersPage__List")
          .then(response => {
-            this.props.setUsers(response.data.UsersForFindUsersPageList[0])
+            this.props.setUsers(response.data.UsersForFindUsersPageList)
+            
          });
    }
+
    render() {
+      debugger;
       let UsersItemCard = this.props.users.map(u => <UsersItem
          id={u.id} avatar={u.avatar} firstName={u.firstName}
          lastName={u.lastName} previewtext={u.previewtext}

@@ -1,6 +1,7 @@
 import React from 'react';
 import c from './users__item.module.css'
 import UserPhoto from '../../../images/user.png';
+
 const UsersItem = (props) => {
    return (
       < div id={props.id}>
@@ -11,7 +12,6 @@ const UsersItem = (props) => {
                </div>
                <div className={c.button}>
                   {props.followed
-
                      ? <button className={c.Follow} onClick={() => { props.unfollow(props.id) }}> You follow</button>
                      : <button className={c.Unfollow} onClick={() => { props.follow(props.id) }}>Follow</button>}
                </div>

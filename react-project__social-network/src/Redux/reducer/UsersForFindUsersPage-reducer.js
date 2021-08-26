@@ -37,8 +37,8 @@ let UsersForFindUsersPage = (state = initialState, action) => {
             })
          }
       case SET_USERS:
-         // debugger;
-         return { ...state, UsersForFindUsersPageList: [...state.UsersForFindUsersPageList, action.Users] }
+         debugger;
+         return { ...state, UsersForFindUsersPageList: [...action.Users] }
       default:
          return state;
    }
