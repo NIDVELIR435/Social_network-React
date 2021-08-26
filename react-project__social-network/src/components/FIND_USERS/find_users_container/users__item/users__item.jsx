@@ -4,7 +4,7 @@ import UserPhoto from '../../../images/user.png';
 
 const UsersItem = (props) => {
    return (
-      < div id={props.id}>
+      < div key={props.id}>
          <div className={c.cardItem}>
             <div className={c.left_column}>
                <div className={c.avatar}>

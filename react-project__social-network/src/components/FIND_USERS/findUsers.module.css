@@ -7,9 +7,43 @@
   width: 98.5%;
   height: 30px;
   text-align: center;
-  border: 1px solid #F2F2F2;
-  background-color: #F2F2F2;
+  border: 1px solid #f2f2f2;
+  background-color: #f2f2f2;
   border-radius: 5px;
+}
+
+.main .Numb_page_div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 5px;
+  max-width: 620px;
+  overflow: hidden;
+}
+
+.main .Numb_page_div .PageNumb {
+  background-color: #f2f2f2;
+  margin: 0px 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.226);
+}
+
+.main .Numb_page_div .PageNumb:active {
+  background-color: #00000048;
+}
+
+.main .Numb_page_div .activePageNumb {
+  font-weight: bold;
+  background-color: #D55845;
 }
 
 .main .gridArea {

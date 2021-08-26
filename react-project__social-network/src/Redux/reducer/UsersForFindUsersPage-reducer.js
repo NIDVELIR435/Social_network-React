@@ -1,17 +1,15 @@
 const FOLLOW = 'FOLLOW';
 const UN_FOLLOW = 'UN_FOLLOW';
 const SET_USERS = 'SET_USERS';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const SET_TOTAL_LIST_COUNT = 'SET_TOTAL_LIST_COUNT';
 
 
 let initialState = {
-   UsersForFindUsersPageList: [
-      // { id: 1, avatar: null, firstName: 'Misha', lastName: 'Gurin', previewtext: 'I`m looking for a new emloy right now', location: { country: 'Ukraine', town: 'Dnipro' }, followed: true, },
-      // { id: 2, avatar: null, firstName: 'Dasha1', lastName: 'Gukova', previewtext: 'Hello)', location: { country: 'Ukraine', town: 'Dnipro' }, followed: true, },
-      // { id: 3, avatar: null, firstName: 'Dasha2', lastName: 'Gukova', previewtext: 'I`m looking for a new emloy right now', location: { country: 'Ukraine', town: 'Kiev' }, followed: true, },
-      // { id: 4, avatar: null, firstName: 'Dasha3', lastName: 'Gukova', previewtext: 'I`m looking for a new emloy right now', location: { country: 'Ukraine', town: 'Kharkov' }, followed: false, },
-      // { id: 5, avatar: null, firstName: 'Dasha4', lastName: 'Gukova', previewtext: 'I`m looking for a new emloy right now', location: { country: 'Ukraine', town: 'Zaporizhya' }, followed: false, },
-      // { id: 6, avatar: null, firstName: 'Dasha5', lastName: 'Gukova', previewtext: 'I`m looking for a new emloy right now', location: { country: 'Ukraine', town: 'Donetck' }, followed: false, },
-   ]
+   UsersForFindUsersPageList: [],
+   pageSize: 10,
+   totalListCount: 0,
+   currentPage: 1,
 };
 
 let UsersForFindUsersPage = (state = initialState, action) => {
@@ -37,16 +35,21 @@ let UsersForFindUsersPage = (state = initialState, action) => {
             })
          }
       case SET_USERS:
-         debugger;
-         return { ...state, UsersForFindUsersPageList: [...action.Users] }
+         return { ...state, UsersForFindUsersPageList: action.Users }
+      case SET_CURRENT_PAGE:
+         return { ...state, currentPage: action.PageNumb }
+      case SET_TOTAL_LIST_COUNT:
+         return { ...state, totalListCount: action.TotalNumb }
       default:
          return state;
    }
 };
 
-export const FollowAC = (UserId) => ({ type: FOLLOW, UserId });               //Follow action creator
-export const UnFollowAC = (UserId) => ({ type: UN_FOLLOW, UserId });           //unFollow action creator
-export const SetUsersAC = (Users) => ({ type: SET_USERS, Users });            //set new user from server action creator
+export const FollowAC = (UserId) => ({ type: FOLLOW, UserId });                                    //Follow action creator
+export const UnFollowAC = (UserId) => ({ type: UN_FOLLOW, UserId });                               //unFollow action creator
+export const SetUsersAC = (Users) => ({ type: SET_USERS, Users });                                 //set new user from server action creator
+export const SetCurrentPageAC = (PageNumb) => ({ type: SET_CURRENT_PAGE, PageNumb });              //set Current page action creator
+export const SetTotalListCountAC = (TotalNumb) => ({ type: SET_TOTAL_LIST_COUNT, TotalNumb });     //set x-total-count action creator
 
 
 export default UsersForFindUsersPage;

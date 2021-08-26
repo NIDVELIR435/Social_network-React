@@ -1,12 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { FollowAC, SetUsersAC, UnFollowAC } from '../../../Redux/reducer/UsersForFindUsersPage-reducer';
+import { FollowAC, SetCurrentPageAC, SetTotalListCountAC, SetUsersAC, UnFollowAC } from '../../../Redux/reducer/UsersForFindUsersPage-reducer';
 import findUsers from '../findUsers'
 
 let StateToProps = (state) => {
-   debugger;
    return {
-      users: state.UsersPageReducer.UsersForFindUsersPageList
+      users: state.UsersPageReducer.UsersForFindUsersPageList,
+      pageSize: state.UsersPageReducer.pageSize,
+      totalListCount: state.UsersPageReducer.totalListCount,
+      currentPage: state.UsersPageReducer.currentPage,
    }
 };
 let DispatchToProps = (dispatch) => {
@@ -19,7 +21,13 @@ let DispatchToProps = (dispatch) => {
       },
       setUsers: (Users) => {
          dispatch(SetUsersAC(Users))
-      }
+      },
+      setTotalListCount: (TotalNumb) => {
+         dispatch(SetTotalListCountAC(TotalNumb))
+      },
+      setCurrentPage: (PageNumb) => {
+         dispatch(SetCurrentPageAC(PageNumb))
+      },
    }
 };
 
