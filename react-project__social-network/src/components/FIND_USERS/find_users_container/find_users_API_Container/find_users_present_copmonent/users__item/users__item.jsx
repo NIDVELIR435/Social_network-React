@@ -1,6 +1,6 @@
 import React from 'react';
 import c from './users__item.module.css'
-import UserPhoto from '../../../images/user.png';
+import UserPhoto from '../../../../../images/user.png';
 
 const UsersItem = (props) => {
    return (

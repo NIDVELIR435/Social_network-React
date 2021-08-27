@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { FollowAC, SetCurrentPageAC, SetTotalListCountAC, SetUsersAC, UnFollowAC } from '../../../Redux/reducer/UsersForFindUsersPage-reducer';
-import findUsers from '../findUsersAPIContainer'
+import FindUsersAPIContainer from './find_users_API_Container/findUsersAPIContainer';
+
 
 let StateToProps = (state) => {
    return {
@@ -31,4 +32,4 @@ let DispatchToProps = (dispatch) => {
    }
 };
 
-export default connect(StateToProps, DispatchToProps)(findUsers);
+export default connect(StateToProps, DispatchToProps)(FindUsersAPIContainer);

@@ -1,6 +1,6 @@
 import * as axios from 'axios';
 import React from 'react';
-import Users from './find_user';
+import Users from './find_users_present_copmonent/find_user';
 
 
 class FindUsersAPIContainer extends React.Component {

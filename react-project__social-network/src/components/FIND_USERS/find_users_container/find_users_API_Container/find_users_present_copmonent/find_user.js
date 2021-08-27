@@ -1,6 +1,6 @@
 import React from 'react';
 import c from './findUsers.module.css';
-import UsersItem from './find_users_container/users__item/users__item';
+import UsersItem from './users__item/users__item';
 
 const Users = (props) => {
 
