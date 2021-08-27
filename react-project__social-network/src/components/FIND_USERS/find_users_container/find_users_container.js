@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { FollowAC, SetCurrentPageAC, SetTotalListCountAC, SetUsersAC, UnFollowAC } from '../../../Redux/reducer/UsersForFindUsersPage-reducer';
-import findUsers from '../findUsers'
+import findUsers from '../findUsersAPIContainer'
 
 let StateToProps = (state) => {
    return {
