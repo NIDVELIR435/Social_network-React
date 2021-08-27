@@ -14,8 +14,8 @@
       flex-wrap: nowrap;
       flex-direction: row;
       margin: 5px;
-      max-width: 620px;
       overflow: hidden;
+      max-width: 620px;
       .PageNumb {
          background-color: #f2f2f2;
          margin: 0px 5px;
@@ -30,9 +30,10 @@
       }
       .activePageNumb {
          font-weight: bold;
-         background-color: #D55845;
+         background-color: #d55845;
       }
    }
+
    .gridArea {
       display: grid;
       grid-template-columns: 1fr 1fr;

@@ -23,8 +23,8 @@
       -ms-flex-direction: row;
           flex-direction: row;
   margin: 5px;
-  max-width: 620px;
   overflow: hidden;
+  max-width: 620px;
 }
 
 .main .Numb_page_div .PageNumb {
@@ -43,7 +43,7 @@
 
 .main .Numb_page_div .activePageNumb {
   font-weight: bold;
-  background-color: #D55845;
+  background-color: #d55845;
 }
 
 .main .gridArea {

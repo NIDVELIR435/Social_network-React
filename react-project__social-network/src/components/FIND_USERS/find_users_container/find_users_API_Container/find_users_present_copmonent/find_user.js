@@ -1,4 +1,5 @@
 import React from 'react';
+import Fetching from '../../../../common_component/fetching/fetching.jsx';
 import c from './findUsers.module.css';
 import UsersItem from './users__item/users__item';
 
@@ -23,12 +24,12 @@ const Users = (props) => {
       <div className={c.Numb_page_div}>
          {pages.map(p => {
             return <button className={`
-                     ${props.currentPage === p ? c.activePageNumb : ''} ${c.PageNumb}`}
+                           ${props.currentPage === p ? c.activePageNumb : ''} ${c.PageNumb}`}
                onClick={(e) => { props.onChangePage(p) }}>{p}</button>
          })}
       </div>
       <div className={c.gridArea}>
-         {UsersItemCard}
+         {props.isFetching ? <Fetching /> : UsersItemCard}
       </div>
    </div >
 }

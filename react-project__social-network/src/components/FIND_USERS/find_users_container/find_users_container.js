@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { FollowAC, SetCurrentPageAC, SetTotalListCountAC, SetUsersAC, UnFollowAC } from '../../../Redux/reducer/UsersForFindUsersPage-reducer';
+import { FollowAC, IsFetchingStatusAC, SetCurrentPageAC, SetTotalListCountAC, SetUsersAC, UnFollowAC } from '../../../Redux/reducer/UsersForFindUsersPage-reducer';
 import FindUsersAPIContainer from './find_users_API_Container/findUsersAPIContainer';
 
 
@@ -10,6 +10,7 @@ let StateToProps = (state) => {
       pageSize: state.UsersPageReducer.pageSize,
       totalListCount: state.UsersPageReducer.totalListCount,
       currentPage: state.UsersPageReducer.currentPage,
+      isFetching: state.UsersPageReducer.isFetching,
    }
 };
 let DispatchToProps = (dispatch) => {
@@ -28,6 +29,9 @@ let DispatchToProps = (dispatch) => {
       },
       setCurrentPage: (PageNumb) => {
          dispatch(SetCurrentPageAC(PageNumb))
+      },
+      IsFetchingStatus: (isFetching) => {
+         dispatch(IsFetchingStatusAC(isFetching))
       },
    }
 };
