@@ -5,8 +5,8 @@ import Dialog__item from './Dialog__item/Dialog__item';
 import Title_item from './Dialog__title/Title.js';
 
 const Messages = (props) => {
-   let Title = props.Titles.map(d => <Title_item path={d.path} name={d.name} />)
-   let Dialog = props.Dialogs.map(d => <Dialog__item message={d.message} className={d.id} />)
+   let Title = props.Titles.map(d => <Title_item key={d.path}path={d.path} name={d.name} />)
+   let Dialog = props.Dialogs.map(d => <Dialog__item key={d.id} message={d.message} className={d.id} />)
    let TextArea = React.createRef();
    
    let Button_AddPost_MessagesBlock = () => {
@@ -19,10 +19,10 @@ const Messages = (props) => {
    }
    return (
       <div className={s.Dialogs}>
-         <div class={s.Dialog}>
+         <div className={s.Dialog}>
             {Title}
          </div>
-         <div class={s.Messages}>
+         <div className={s.Messages}>
             {Dialog}
             <div className={s.InputArea}>
 

@@ -3,7 +3,7 @@ import s from "./Jobs.module.css";
 
 const Jobs = () => {
    return (
-      <div class={s.Jobs}>
+      <div className={s.Jobs}>
          <p> Jobs page</p>
       </div>
    )

@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const Link = () => {
    return (
       <div className={c.Link}>
-         <NavLink to="/Profile" ActiveClassName={c.active}>Viev Profile</NavLink>
+         <NavLink to="/Profile" activeClassName={c.active}>Viev Profile</NavLink>
       </div >
    )
 };

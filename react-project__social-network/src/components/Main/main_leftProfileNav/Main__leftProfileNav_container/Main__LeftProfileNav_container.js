@@ -9,8 +9,8 @@ import Main__leftProfileNav from '../Main__LeftProfileNav';
 //             <div className={c.profileLeftNav__AvaAndName}>
 //                <img src={avatar} alt="avatar" />
 //                <div className={c.Name}>
-//                   <h1 class="NameAndSurname"> Diana Smith</h1>
-//                   <h3 class="wayDirectionValue">Designer</h3>
+//                   <h1 className="NameAndSurname"> Diana Smith</h1>
+//                   <h3 className="wayDirectionValue">Designer</h3>
 //                </div>
 //             </div>
 //          </div>

@@ -6,7 +6,7 @@ import c from './Title.module.css';
 
 const Title = (props) => {
    return (
-      <div class={c.Title}>
+      <div className={c.Title}>
          <NavLink to={"/Messages/" + props.path}>
             <div className={c.avatar}>
                {props.ava}
