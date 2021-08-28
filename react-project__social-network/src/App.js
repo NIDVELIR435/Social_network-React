@@ -14,7 +14,7 @@ import Notification from './components/Notification/Notification';
 import Profile from './components/Profile/Profile';
 import Main__leftProfileNav_container from './components/Main/main_leftProfileNav/Main__leftProfileNav_container/Main__LeftProfileNav_container';
 import Find_users__container from './components/FIND_USERS/find_users_container/find_users_container';
-import Member_Profile__Container from './components/Member_Profile/MemberProfileContainer/Member_Profile__Container';
+import Member_Profile__Container from './components/Member_Profile__Container/Member_Profile__Container';
 
 const App = () => {
   return (
@@ -36,7 +36,7 @@ const App = () => {
           <Route path='/findUsers' render={() => (<Find_users__container />)} />
           <Route path='/Notification' render={Notification} />
           <Route path='/Profile' render={Profile} />
-          <Route path='/memberProfile' render={() => (<Member_Profile__Container />)} />
+          <Route path='/memberProfile/:UserId?' render={() => (<Member_Profile__Container />)} />
         </div>
       </div>
     </div>
