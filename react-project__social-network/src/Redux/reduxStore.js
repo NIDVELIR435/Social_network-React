@@ -14,5 +14,5 @@ let _reducers = combineReducers({ //combine ours redusers from redux store
    UsersPageReducer: UsersForFindUsersPage,
 });
 let Store = createStore(_reducers); //create redux Store and pass him combined reducer
-
+window.Store = Store;               //даёт возможность посмотреть через браузер, что есть в сторе
 export default Store;

@@ -3,7 +3,7 @@ import React from 'react';
 import Users from './find_users_present_copmonent/find_user';
 
 
-class FindUsersAPIContainer extends React.Component {
+class  FindUsersAPIContainer extends React.Component {
    componentDidMount() {
       this.props.IsFetchingStatusAC(true)
       axios.get(`http://localhost:3000/UsersPage__List?_page=${this.props.currentPage}&_limit=${this.props.pageSize}`)
@@ -25,7 +25,6 @@ class FindUsersAPIContainer extends React.Component {
    }
 
    render() {                                                                 //*render не отрисовывает jsx в html DOM, а передает реакту для отрисовки презентационную компоненту
-      // debugger;
       return <Users users={this.props.users}
          totalListCount={this.props.totalListCount}
          pageSize={this.props.pageSize}

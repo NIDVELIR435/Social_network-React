@@ -1,6 +1,7 @@
 import React from 'react';
 import c from './users__item.module.css'
 import UserPhoto from '../../../../../images/user.png';
+import { NavLink } from 'react-router-dom';
 
 const UsersItem = (props) => {
    return (
@@ -8,7 +9,9 @@ const UsersItem = (props) => {
          <div className={c.cardItem}>
             <div className={c.left_column}>
                <div className={c.avatar}>
-                  <img src={props.avatar != null ? props.avatar : UserPhoto} />
+                  <NavLink to={`memberProfile/${props.id}`}>
+                     <img src={props.avatar != null ? props.avatar : UserPhoto} />
+                  </NavLink>
                </div>
                <div className={c.button}>
                   {props.followed
