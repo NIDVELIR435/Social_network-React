@@ -12,7 +12,7 @@ const UsersItem = (props) => {
                </div>
                <div className={c.button}>
                   {props.followed
-                     ? <button className={c.Follow} onClick={() => { props.unfollow(props.id) }}> You follow</button>
+                     ? <button className={c.Follow} onClick={() => { props.unFollow(props.id) }}> You follow</button>
                      : <button className={c.Unfollow} onClick={() => { props.follow(props.id) }}>Follow</button>}
                </div>
             </div>
