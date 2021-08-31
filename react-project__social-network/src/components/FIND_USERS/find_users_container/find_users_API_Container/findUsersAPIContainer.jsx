@@ -13,6 +13,9 @@ class  FindUsersAPIContainer extends React.Component {
             this.props.SetTotalListCountAC(response.headers["x-total-count"])   //? что бы найти целое число json списка, нужно найти свойство  header и обратиться к нему, как к елементу массива 
          });
    }
+   // componentDidUpdate(){
+   //    console.log(this.componentDidUpdate)
+   // }
 
    onChangePage = (PageNumber) => {                                           //*меняет список и при нажатии на сгенерированую кнопку списка
       this.props.SetCurrentPageAC(PageNumber);
@@ -30,8 +33,8 @@ class  FindUsersAPIContainer extends React.Component {
          pageSize={this.props.pageSize}
          currentPage={this.props.currentPage}
          onChangePage={this.onChangePage}
-         unFollow={this.props.UnFollowAC}
-         follow={this.props.FollowAC}
+         UnFollowAC={this.props.UnFollowAC}
+         FollowAC={this.props.FollowAC}
          isFetching={this.props.isFetching}
       />
    }

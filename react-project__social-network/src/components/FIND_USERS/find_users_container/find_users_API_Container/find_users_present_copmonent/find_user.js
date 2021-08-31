@@ -2,15 +2,14 @@ import React from 'react';
 import Fetching from '../../../../common_component/fetching/fetching.jsx';
 import c from './findUsers.module.css';
 import UsersItem from './users__item/users__item';
-
 const Users = (props) => {
    let UsersItemCard = props.users.map(u => <UsersItem
       key={u.id} id={u.id} avatar={u.avatar} firstName={u.firstName}
       lastName={u.lastName} previewtext={u.previewtext}
       country={u.location.country} town={u.location.town}
       followed={u.followed}
-      follow={props.follow}
-      unFollow={props.unFollow}
+      FollowAC={props.FollowAC}
+      UnFollowAC={props.UnFollowAC}
    />);
 
    let pagesCount = Math.ceil(props.totalListCount / props.pageSize);

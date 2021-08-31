@@ -1,16 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { UnFollowAC, FollowAC, IsFetchingStatusAC, SetCurrentPageAC, SetTotalListCountAC, SetUsersAC } from '../../../Redux/reducer/UsersForFindUsersPage-reducer';
+import { UnFollowAC, FollowAC, IsFetchingStatusAC, SetCurrentPageAC, SetTotalListCountAC, SetUsersAC } from '../../../Redux/reducer/UsersList-reducer';
 import FindUsersAPIContainer from './find_users_API_Container/findUsersAPIContainer';
 
 
 let StateToProps = (state) => {
+   // debugger;
    return {
-      users: state.UsersPageReducer.UsersForFindUsersPageList,
-      pageSize: state.UsersPageReducer.pageSize,
-      totalListCount: state.UsersPageReducer.totalListCount,
-      currentPage: state.UsersPageReducer.currentPage,
-      isFetching: state.UsersPageReducer.isFetching,
+      users: state.UsersListReducer.UsersList,
+      pageSize: state.UsersListReducer.pageSize,
+      totalListCount: state.UsersListReducer.totalListCount,
+      currentPage: state.UsersListReducer.currentPage,
+      isFetching: state.UsersListReducer.isFetching,
    }
 };
 

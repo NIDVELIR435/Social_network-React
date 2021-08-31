@@ -1,1 +1,6 @@
-/* No CSS *//*# sourceMappingURL=Member_profile.module.css.map */
+.gridArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=Member_profile.module.css.map */

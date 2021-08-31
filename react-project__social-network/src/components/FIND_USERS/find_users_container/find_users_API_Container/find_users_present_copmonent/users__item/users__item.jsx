@@ -2,8 +2,30 @@ import React from 'react';
 import c from './users__item.module.css'
 import UserPhoto from '../../../../../images/user.png';
 import { NavLink } from 'react-router-dom';
+import * as axios from 'axios';
+// import { FollowAC, UnFollowAC } from '../../../../../../Redux/reducer/UsersList-reducer';
 
 const UsersItem = (props) => {
+   let follow = () => {
+      return (
+         axios.patch(`http://localhost:3000/UsersPage__List/${props.id}`,
+            { 'followed': true })
+            .then(response => {
+               props.FollowAC(props.id)
+               console.log(response.data);
+            }))
+   }
+
+   let Unfollow = () => {
+      return (
+         axios.patch(`http://localhost:3000/UsersPage__List/${props.id}`,
+            { 'followed': false })
+            .then(response => {
+               console.log(response.data);
+               props.UnFollowAC(props.id)
+            }))
+   }
+
    return (
       < div>
          <div className={c.cardItem}>
@@ -15,8 +37,8 @@ const UsersItem = (props) => {
                </div>
                <div className={c.button}>
                   {props.followed
-                     ? <button className={c.Follow} onClick={() => { props.unFollow(props.id) }}> You follow</button>
-                     : <button className={c.Unfollow} onClick={() => { props.follow(props.id) }}>Follow</button>}
+                     ? <button className={c.Follow} onClick={Unfollow}> You follow</button>
+                     : <button className={c.Unfollow} onClick={follow}>Follow</button>}
                </div>
             </div>
             <div className={c.text}>

@@ -1,9 +1,9 @@
 // import MessageBlockReducer from './reducer/MessageBlock-reducer.js';
-import MessageBlockReducer from './reducer/MessageBlock-reducer';
-import HomeBlockReducer from './reducer/HomeBlock-reducer';
+// import MessageBlockReducer from './reducer/MessageBlock-reducer';
+// import HomeBlockReducer from './reducer/HomeBlock-reducer';
 
-let Store = {
-   _State: {
+// let Store = {
+//    _State: {
       // Messages: {
       //    Dialogs: [
       //       { id: 1, message: 'Hello, nice to meet you!' },
@@ -39,22 +39,22 @@ let Store = {
       
       // NewPostText: "value for posts",
       // TextAreaCenterNewsValue: 'TextAreaCenterNewsValue',
-   },
-   _RerenderEntireTree() {
-   },
-   getState() {
-      return this._State;
-   },
-   subscribe(newRerender) {
-      return (
-         this._RerenderEntireTree = newRerender
-      )
-   },
-   dispatch(action) {
-      this._State = MessageBlockReducer(this._State, action);
-      this._State = HomeBlockReducer(this._State, action);
-      this._RerenderEntireTree()
-   }
-}
+//    },
+//    _RerenderEntireTree() {
+//    },
+//    getState() {
+//       return this._State;
+//    },
+//    subscribe(newRerender) {
+//       return (
+//          this._RerenderEntireTree = newRerender
+//       )
+//    },
+//    dispatch(action) {
+//       this._State = MessageBlockReducer(this._State, action);
+//       this._State = HomeBlockReducer(this._State, action);
+//       this._RerenderEntireTree()
+//    }
+// }
 
-export default Store;
+// export default Store;

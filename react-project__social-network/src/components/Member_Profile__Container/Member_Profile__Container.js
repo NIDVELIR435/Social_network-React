@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { SetUsersAC } from '../../Redux/reducer/UsersForFindUsersPage-reducer';
+import { VievCurrentUserAC } from '../../Redux/reducer/UsersList-reducer';
 import * as axios from 'axios';
 import Member_Profile from './Member_profile__item/Member_Profile.jsx'
 import { withRouter } from 'react-router-dom';
@@ -10,7 +10,7 @@ class ClassContainer__MemberProfile extends React.Component {
       let CurrentIdUser = this.props.match.params.UserId;
       axios.get(`http://localhost:3000/UsersPage__List/${CurrentIdUser}`)
          .then(response => {
-            this.props.SetUsersAC(response.data)
+            this.props.VievCurrentUserAC(response.data)
          });
    }
    render() {
@@ -22,17 +22,18 @@ class ClassContainer__MemberProfile extends React.Component {
    }
 
 };
+
 const WithRouterComponent__UserId = withRouter(ClassContainer__MemberProfile);
 
 let StateToProps = (state) => {
    return (
       {
-         avatar: state.UsersPageReducer.UsersForFindUsersPageList.avatar,
-         firstName: state.UsersPageReducer.UsersForFindUsersPageList.firstName,
-         lastName: state.UsersPageReducer.UsersForFindUsersPageList.lastName,
-         aboutMember: state.UsersPageReducer.UsersForFindUsersPageList.previewtext,
+         avatar: state.UsersListReducer.VievCurrentUser.avatar,
+         firstName: state.UsersListReducer.VievCurrentUser.firstName,
+         lastName: state.UsersListReducer.VievCurrentUser.lastName,
+         aboutMember: state.UsersListReducer.VievCurrentUser.previewtext,
       }
    )
 };
 
-export default connect(StateToProps, { SetUsersAC })(WithRouterComponent__UserId);
+export default connect(StateToProps, { VievCurrentUserAC })(WithRouterComponent__UserId);
