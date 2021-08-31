@@ -10,6 +10,8 @@ const Users = (props) => {
       followed={u.followed}
       FollowAC={props.FollowAC}
       UnFollowAC={props.UnFollowAC}
+      VievCurrentUser={props.VievCurrentUser}
+      isRequestSubsButtonAC={props.isRequestSubsButtonAC}
    />);
 
    let pagesCount = Math.ceil(props.totalListCount / props.pageSize);

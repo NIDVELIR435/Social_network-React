@@ -7,22 +7,25 @@ import { UserAPI } from '../../../../../../API/axios_get_api';
 const UsersItem = (props) => {
    let follow = () => {
       return (
+         props.isRequestSubsButtonAC(true, props.id),
          UserAPI.followStatus(props.id)
             .then(data => {
-               props.FollowAC(props.id)
+               props.FollowAC(props.id);
+               props.isRequestSubsButtonAC(false, props.id);
             })
       )
-   }
+   };
 
    let Unfollow = () => {
       return (
+         props.isRequestSubsButtonAC(true, props.id),
          UserAPI.followStatus(props.id)
             .then(data => {
-               props.UnFollowAC(props.id)
+               props.UnFollowAC(props.id);
+               props.isRequestSubsButtonAC(false, props.id);
             })
       )
-   }
-
+   };
    return (
       < div>
          <div className={c.cardItem}>
@@ -34,8 +37,8 @@ const UsersItem = (props) => {
                </div>
                <div className={c.button}>
                   {props.followed
-                     ? <button className={c.Follow} onClick={Unfollow}> You follow</button>
-                     : <button className={c.Unfollow} onClick={follow}>Follow</button>}
+                     ? <button disabled={props.VievCurrentUser.some(id => id === props.id)} className={c.Follow} onClick={Unfollow}> You follow</button>
+                     : <button disabled={props.VievCurrentUser.some(id => id === props.id)} className={c.Unfollow} onClick={follow}>Follow</button>}
                </div>
             </div>
             <div className={c.text}>

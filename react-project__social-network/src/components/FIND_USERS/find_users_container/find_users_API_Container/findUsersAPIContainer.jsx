@@ -36,6 +36,8 @@ class  FindUsersAPIContainer extends React.Component {
          UnFollowAC={this.props.UnFollowAC}
          FollowAC={this.props.FollowAC}
          isFetching={this.props.isFetching}
+         VievCurrentUser={this.props.VievCurrentUser}
+         isRequestSubsButtonAC={this.props.isRequestSubsButtonAC}
       />
    }
 }

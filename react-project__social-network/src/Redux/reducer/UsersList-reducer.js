@@ -4,7 +4,8 @@ const SET_USERS = 'SET_USERS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_LIST_COUNT = 'SET_TOTAL_LIST_COUNT';
 const IS_FETCHING_STATUS = 'IS_FETCHING_STATUS';
-const IS_UPDATE_FOLLOW_STAT = 'IS_UPDATE_FOLLOW_STAT';
+// const IS_UPDATE_FOLLOW_STAT = 'IS_UPDATE_FOLLOW_STAT';
+const IS_REQUEST_SUBS_BUTTON = 'IS_REQUEST_SUBS_BUTTON';
 const SET_CURRENT_USER_TO_OBJ = 'SET_CURRENT_USER_TO_OBJ';
 
 
@@ -14,7 +15,9 @@ let initialState = {
    totalListCount: 0,
    currentPage: 1,
    isFetching: true,
+   isRequestSubsButton: [],
    VievCurrentUser: [],
+
 };
 
 let UsersList = (state = initialState, action) => {
@@ -49,8 +52,14 @@ let UsersList = (state = initialState, action) => {
          return { ...state, totalListCount: action.TotalNumb }
       case IS_FETCHING_STATUS:
          return { ...state, isFetching: action.isFetching }
-      // case IS_UPDATE_FOLLOW_STAT:
-      //    return { ...state, UsersList: action.isUPDStatus }
+      case IS_REQUEST_SUBS_BUTTON:
+         debugger
+         return {
+            ...state,
+            isRequestSubsButton: action.isRequest
+               ? [...state.isRequestSubsButton, action.userId]
+               : state.isRequestSubsButton.filter(id => id !== action.userId)
+         }
       default:
          return state;
    }
@@ -63,8 +72,7 @@ export const VievCurrentUserAC = (CurrentUser) => ({ type: SET_CURRENT_USER_TO_O
 export const SetCurrentPageAC = (PageNumb) => ({ type: SET_CURRENT_PAGE, PageNumb });              //set Current page action creator
 export const SetTotalListCountAC = (TotalNumb) => ({ type: SET_TOTAL_LIST_COUNT, TotalNumb });     //set x-total-count action creator
 export const IsFetchingStatusAC = (isFetching) => ({ type: IS_FETCHING_STATUS, isFetching });     //set status response action creator
-// export const IsUpdateFollowStatusAC = (isUPDStatus) => ({ type: IS_UPDATE_FOLLOW_STAT, isUPDStatus });     //update folow status for member action creator
-
+export const isRequestSubsButtonAC = (isRequest, userId) => ({ type: IS_REQUEST_SUBS_BUTTON, isRequest, userId });     //set status response action creator
 
 export default UsersList;
 
