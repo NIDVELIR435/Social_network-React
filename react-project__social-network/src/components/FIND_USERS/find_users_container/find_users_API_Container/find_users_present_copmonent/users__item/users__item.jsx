@@ -2,28 +2,25 @@ import React from 'react';
 import c from './users__item.module.css'
 import UserPhoto from '../../../../../images/user.png';
 import { NavLink } from 'react-router-dom';
-import * as axios from 'axios';
-// import { FollowAC, UnFollowAC } from '../../../../../../Redux/reducer/UsersList-reducer';
+import { UserAPI } from '../../../../../../API/axios_get_api';
 
 const UsersItem = (props) => {
    let follow = () => {
       return (
-         axios.patch(`http://localhost:3000/UsersPage__List/${props.id}`,
-            { 'followed': true })
-            .then(response => {
+         UserAPI.followStatus(props.id)
+            .then(data => {
                props.FollowAC(props.id)
-               console.log(response.data);
-            }))
+            })
+      )
    }
 
    let Unfollow = () => {
       return (
-         axios.patch(`http://localhost:3000/UsersPage__List/${props.id}`,
-            { 'followed': false })
-            .then(response => {
-               console.log(response.data);
+         UserAPI.followStatus(props.id)
+            .then(data => {
                props.UnFollowAC(props.id)
-            }))
+            })
+      )
    }
 
    return (

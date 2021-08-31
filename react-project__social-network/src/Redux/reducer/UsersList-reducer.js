@@ -20,7 +20,6 @@ let initialState = {
 let UsersList = (state = initialState, action) => {
    switch (action.type) {
       case FOLLOW:
-         debugger;
          return {
             ...state,
             UsersList: state.UsersList.map(u => {
@@ -31,7 +30,6 @@ let UsersList = (state = initialState, action) => {
             })
          }
       case UN_FOLLOW:
-         debugger;
          return {
             ...state,
             UsersList: state.UsersList.map(u => {
@@ -42,7 +40,6 @@ let UsersList = (state = initialState, action) => {
             })
          }
       case SET_USERS:
-         debugger;
          return { ...state, UsersList: action.Users }
       case SET_CURRENT_USER_TO_OBJ:
          return { ...state, VievCurrentUser: action.CurrentUser }
