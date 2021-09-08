@@ -3,7 +3,8 @@ import c from "./Main__CenterNews.module.css";
 import Post from "../posts/posts.jsx"
 
 const CenterNews = (props) => {
-   let Posts = props.OutContainerPost.map(d => <Post Message={d.Message} LikeCount={d.LikeCount} />)
+   // debugger;
+   let Posts = props.OutContainerPost.map((d) => <Post key={d.id} Message={d.Message} LikeCount={d.LikeCount} />)
    let NewPostCreate = React.createRef();
    let OnButtonClick_AddPost = () => {
       let Text = NewPostCreate.current.value

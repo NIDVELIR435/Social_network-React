@@ -2,7 +2,7 @@ import React from 'react';
 import c from './users__item.module.css'
 import UserPhoto from '../../../../../images/user.png';
 import { NavLink } from 'react-router-dom';
-import { UserAPI } from '../../../../../../API/axios_get_api';
+import { UserAPI } from '../../../../../../API/axios_api';
 
 const UsersItem = (props) => {
    let follow = () => {

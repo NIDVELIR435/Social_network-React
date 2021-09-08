@@ -2,6 +2,7 @@ import React from 'react';
 import Fetching from '../../../../common_component/fetching/fetching.jsx';
 import c from './findUsers.module.css';
 import UsersItem from './users__item/users__item';
+
 const Users = (props) => {
    let UsersItemCard = props.users.map(u => <UsersItem
       key={u.id} id={u.id} avatar={u.avatar} firstName={u.firstName}

@@ -1,30 +1,13 @@
-import * as axios from 'axios';
 import React from 'react';
 import Users from './find_users_present_copmonent/find_user';
 
 
-class  FindUsersAPIContainer extends React.Component {
+class FindUsersAPIContainer extends React.Component {
    componentDidMount() {
-      this.props.IsFetchingStatusAC(true)
-      axios.get(`http://localhost:3000/UsersPage__List?_page=${this.props.currentPage}&_limit=${this.props.pageSize}`)
-         .then(response => {
-            this.props.IsFetchingStatusAC(false)
-            this.props.SetUsersAC(response.data)
-            this.props.SetTotalListCountAC(response.headers["x-total-count"])   //? что бы найти целое число json списка, нужно найти свойство  header и обратиться к нему, как к елементу массива 
-         });
+      this.props.getUsersTC(this.props.currentPage, this.props.pageSize);     //* обращаемся к THUNK creator что бы он создал санку и она подгрузила пользователей
    }
-   // componentDidUpdate(){
-   //    console.log(this.componentDidUpdate)
-   // }
-
    onChangePage = (PageNumber) => {                                           //*меняет список и при нажатии на сгенерированую кнопку списка
-      this.props.SetCurrentPageAC(PageNumber);
-      this.props.IsFetchingStatusAC(true)
-      axios.get(`http://localhost:3000/UsersPage__List?_page=${PageNumber}&_limit=${this.props.pageSize}`)
-         .then(response => {
-            this.props.IsFetchingStatusAC(false)
-            this.props.SetUsersAC(response.data)
-         });
+      this.props.onChangeTC(PageNumber,this.props.pageSize)
    }
 
    render() {                                                                 //*render не отрисовывает jsx в html DOM, а передает реакту для отрисовки презентационную компоненту

@@ -1,9 +1,10 @@
-import { combineReducers, createStore } from 'redux'
+import { applyMiddleware, combineReducers, createStore } from 'redux'
 import HomeBlockReducer from './reducer/HomeBlock-reducer';
 import MessageBlockReducer from './reducer/MessageBlock-reducer';
 import listSuggestionForPeople from './reducer/SuggestionsBlock-reducer';
 import listTitlesName_forMessages from './reducer/TitlesName_MessagesBlock-reducer';
 import UsersList from './reducer/UsersList-reducer';
+import thunkMiddleware from 'redux-thunk' //* промежуточный уровень
 
 
 let _reducers = combineReducers({ //combine ours redusers from redux store
@@ -13,6 +14,6 @@ let _reducers = combineReducers({ //combine ours redusers from redux store
    HomeBlockReducer: HomeBlockReducer,
    UsersListReducer: UsersList,
 });
-let Store = createStore(_reducers); //create redux Store and pass him combined reducer
+let Store = createStore(_reducers, applyMiddleware(thunkMiddleware)); //create redux Store and pass him combined reducer
 window.Store = Store;               //даёт возможность посмотреть через браузер, что есть в сторе
 export default Store;

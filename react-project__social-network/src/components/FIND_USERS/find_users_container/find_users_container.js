@@ -1,8 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { UnFollowAC, FollowAC, IsFetchingStatusAC, SetCurrentPageAC, SetTotalListCountAC, SetUsersAC, isRequestSubsButtonAC, VievCurrentUser} from '../../../Redux/reducer/UsersList-reducer';
+import { UnFollowAC, FollowAC, isRequestSubsButtonAC, onChangeTC, getUsersTC } from '../../../Redux/reducer/UsersList-reducer';
 import FindUsersAPIContainer from './find_users_API_Container/findUsersAPIContainer';
-
 
 let StateToProps = (state) => {
    return {
@@ -16,6 +15,5 @@ let StateToProps = (state) => {
 };
 
 export default connect(StateToProps, {
-   FollowAC, UnFollowAC,
-   SetUsersAC, SetTotalListCountAC, SetCurrentPageAC, IsFetchingStatusAC, isRequestSubsButtonAC
+   FollowAC, UnFollowAC, isRequestSubsButtonAC, getUsersTC, onChangeTC
 })(FindUsersAPIContainer);
