@@ -13,6 +13,8 @@ class FindUsersAPIContainer extends React.Component {
    render() {                                                                 //*render не отрисовывает jsx в html DOM, а передает реакту для отрисовки презентационную компоненту
       return <Users users={this.props.users}
          totalListCount={this.props.totalListCount}
+         followTC={this.props.followTC}
+         unfollowTC={this.props.unfollowTC}
          pageSize={this.props.pageSize}
          currentPage={this.props.currentPage}
          onChangePage={this.onChangePage}

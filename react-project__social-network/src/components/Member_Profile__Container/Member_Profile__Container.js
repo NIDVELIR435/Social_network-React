@@ -1,16 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { VievCurrentUserAC } from '../../Redux/reducer/UsersList-reducer';
-import * as axios from 'axios';
-import Member_Profile from './Member_profile__item/Member_Profile.jsx'
 import { withRouter } from 'react-router-dom';
+import { VievCurrentUserAC } from '../../Redux/reducer/UsersList-reducer';
+import Member_Profile from './Member_profile__item/Member_Profile.jsx'
+import { UserAPI } from '../../API/axios_api';
 
-class ClassContainer__MemberProfile extends React.Component {
+class ClassContainer__MemberProfile extends React.Component {           //* создаем класовую компоненту
    componentDidMount() {
-      let CurrentIdUser = this.props.match.params.UserId;
-      axios.get(`http://localhost:3000/UsersPage__List/${CurrentIdUser}`)
-         .then(response => {
-            this.props.VievCurrentUserAC(response.data)
+      debugger;
+      UserAPI.getUsersFromMemberPage(this.props.match.params.UserId)
+         .then(res => {
+            this.props.VievCurrentUserAC(res)
          });
    }
    render() {
@@ -23,7 +23,7 @@ class ClassContainer__MemberProfile extends React.Component {
 
 };
 
-const WithRouterComponent__UserId = withRouter(ClassContainer__MemberProfile);
+const WithRouterComponent__UserId = withRouter(ClassContainer__MemberProfile); //* оборачиваем контейнерную компонету
 
 let StateToProps = (state) => {
    return (
@@ -36,4 +36,4 @@ let StateToProps = (state) => {
    )
 };
 
-export default connect(StateToProps, { VievCurrentUserAC })(WithRouterComponent__UserId);
+export default connect(StateToProps, { VievCurrentUserAC })(WithRouterComponent__UserId); //* создаем контейнерную компоненту

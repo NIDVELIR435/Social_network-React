@@ -2,30 +2,8 @@ import React from 'react';
 import c from './users__item.module.css'
 import UserPhoto from '../../../../../images/user.png';
 import { NavLink } from 'react-router-dom';
-import { UserAPI } from '../../../../../../API/axios_api';
 
 const UsersItem = (props) => {
-   let follow = () => {
-      return (
-         props.isRequestSubsButtonAC(true, props.id),
-         UserAPI.followStatus(props.id)
-            .then(data => {
-               props.FollowAC(props.id);
-               props.isRequestSubsButtonAC(false, props.id);
-            })
-      )
-   };
-
-   let Unfollow = () => {
-      return (
-         props.isRequestSubsButtonAC(true, props.id),
-         UserAPI.followStatus(props.id)
-            .then(data => {
-               props.UnFollowAC(props.id);
-               props.isRequestSubsButtonAC(false, props.id);
-            })
-      )
-   };
    return (
       < div>
          <div className={c.cardItem}>
@@ -37,8 +15,11 @@ const UsersItem = (props) => {
                </div>
                <div className={c.button}>
                   {props.followed
-                     ? <button disabled={props.VievCurrentUser.some(id => id === props.id)} className={c.Follow} onClick={Unfollow}> You follow</button>
-                     : <button disabled={props.VievCurrentUser.some(id => id === props.id)} className={c.Unfollow} onClick={follow}>Follow</button>}
+                     ? <button disabled={props.VievCurrentUser.some(id => id === props.id)}
+                        className={c.Follow} onClick={() => { props.unfollowTC(props.id) }}> You follow</button>
+                     : <button disabled={props.VievCurrentUser.some(id => id === props.id)}
+                        className={c.Unfollow} onClick={() => { props.followTC(props.id) }}>Follow</button>
+                  }
                </div>
             </div>
             <div className={c.text}>

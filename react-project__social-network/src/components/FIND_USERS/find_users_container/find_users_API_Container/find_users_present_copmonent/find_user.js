@@ -11,6 +11,8 @@ const Users = (props) => {
       followed={u.followed}
       FollowAC={props.FollowAC}
       UnFollowAC={props.UnFollowAC}
+      followTC={props.followTC}
+      unfollowTC={props.unfollowTC}
       VievCurrentUser={props.VievCurrentUser}
       isRequestSubsButtonAC={props.isRequestSubsButtonAC}
    />);

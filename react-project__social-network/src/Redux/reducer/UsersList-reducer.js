@@ -76,7 +76,7 @@ export const SetTotalListCountAC = (TotalNumb) => ({ type: SET_TOTAL_LIST_COUNT,
 export const IsFetchingStatusAC = (isFetching) => ({ type: IS_FETCHING_STATUS, isFetching });                        //set status response action creator
 export const isRequestSubsButtonAC = (isRequest, userId) => ({ type: IS_REQUEST_SUBS_BUTTON, isRequest, userId });   //set disabled button if fetching request to server action creator
 
-//* создаем Thunk, что будут выполнять асинхронные операции и получать dispatch и их передавать на выполнение в редюсер
+//* создаем Thunk, что будут выполнять асинхронные операции, вызывать dispatch и их передавать на выполнение в редюсер
 
 export const getUsersTC = (currentPage, pageSize) => {              //это функция, что может принимать в себя параментры и создавать санку
    return (dispatch) => {                                                  //это санка(thunk)
@@ -89,13 +89,37 @@ export const getUsersTC = (currentPage, pageSize) => {              //это ф�
    }
 };
 export const onChangeTC = (PageNumber, pageSize) => {              //это функция, что может принимать в себя параментры и создавать санку
-   return (dispatch) => {   
+   return (dispatch) => {
       dispatch(SetCurrentPageAC(PageNumber));                                               //это санка(thunk)
       dispatch(IsFetchingStatusAC(true));
       UserAPI.getUsersList(PageNumber, pageSize).then(response => {
          dispatch(IsFetchingStatusAC(false))
          dispatch(SetUsersAC(response.data))
       })
+   }
+};
+
+export const followTC = (Userid) => {                              //это функция, что может принимать в себя параментры и создавать санку
+   debugger;
+   return (dispatch) => {
+      dispatch(isRequestSubsButtonAC(true, Userid))
+      UserAPI.followStatus(Userid, true)
+         .then(() => {
+            dispatch(FollowAC(Userid))
+            dispatch(isRequestSubsButtonAC(false, Userid))
+         })
+   }
+};
+
+export const unfollowTC = (Userid) => {                            //это функция, что может принимать в себя параментры и создавать санку
+   debugger;
+   return (dispatch) => {
+      dispatch(isRequestSubsButtonAC(true, Userid))
+      UserAPI.followStatus(Userid, false)
+         .then(() => {
+            dispatch(UnFollowAC(Userid))
+            dispatch(isRequestSubsButtonAC(false, Userid))
+         })
    }
 };
 
