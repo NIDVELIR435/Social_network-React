@@ -1,10 +1,10 @@
 import React from 'react';
-import Fetching from '../../../../common_component/fetching/fetching.jsx';
-import c from './findUsers.module.css';
-import UsersItem from './users__item/users__item';
+import Fetching from '../../common_component/fetching/fetching';
+import c from './Users.module.css';
+import Users_item from './Users__item/Users__item.jsx';
 
 const Users = (props) => {
-   let UsersItemCard = props.users.map(u => <UsersItem
+   let UsersItemCard = props.users.map(u => <Users_item
       key={u.id} id={u.id} avatar={u.avatar} firstName={u.firstName}
       lastName={u.lastName} previewtext={u.previewtext}
       country={u.location.country} town={u.location.town}

@@ -1,6 +1,6 @@
 import React from 'react';
-import c from './users__item.module.css'
-import UserPhoto from '../../../../../images/user.png';
+import c from './Users__item.module.css'
+import UserPhoto from '../../../images/user.png';
 import { NavLink } from 'react-router-dom';
 
 const UsersItem = (props) => {
