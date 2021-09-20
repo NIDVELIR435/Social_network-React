@@ -18,6 +18,7 @@ let initialState = {
    isFetching: true,
    isRequestSubsButton: [],
    VievCurrentUser: [],
+   VievCurrentUserMemberPage: [],
 
 };
 
@@ -46,7 +47,7 @@ let UsersList = (state = initialState, action) => {
       case SET_USERS:
          return { ...state, UsersList: action.Users }
       case SET_CURRENT_USER_TO_OBJ:
-         return { ...state, VievCurrentUser: action.CurrentUser }
+         return { ...state, VievCurrentUserMemberPage: action.CurrentUser }
       case SET_CURRENT_PAGE:
          return { ...state, currentPage: action.PageNumb }
       case SET_TOTAL_LIST_COUNT:

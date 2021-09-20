@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,SAAS,CAAC;EACP,OAAO,EAAE,IAAI;CAiBf",
-    "sources": [
-        "Member_profile.module.scss"
-    ],
-    "names": [],
-    "file": "Member_profile.module.css"
-}

@@ -1,24 +1,32 @@
 import React from 'react';
-import c from './Member_profile.module.css';
 import UserPhoto from '../../images/user.png'
-const Member_Profile = (props) => {
+import styled from 'styled-components';
 
+const FlexArea = styled.div`
+   margin: 20px;
+   display: flex;
+   justify-content: center;`;
+const Span = styled.span`
+   color:#1ECEAB`;
+const AboutMember = styled.div`
+      color:#1ECEAC`;
+
+const Member_Profile = (props) => {
    return (
-      <div className={c.gridArea}>
-         <div className={c.left_area}>
-            <div className={c.avatar}>
-               <img src={props.avatar != null ? props.avatar : UserPhoto}/>
+      <FlexArea>
+         <div className='left_area'>
+            <div className='avatar'>
+               <img src={props.avatar != null ? props.avatar : UserPhoto} />
             </div>
-            <div className={c.fullName}>
-               <span className={c.firstName}>{props.firstName}</span>
-               <span className={c.lastName}>{props.lastName}</span>
+            <div className='fullName'>
+               <Span>{props.firstName} {props.lastName}</Span>
             </div>
-            <div className={c.aboutMember}>{props.aboutMember}</div>
+            <AboutMember>{props.aboutMember}</AboutMember>
          </div >
-         <div className={c.right_area}>
-            right grid area
+         <div className='right_area'>
+            Right FlexArea area
          </div>
-      </div >
+      </FlexArea>
    )
 
 }

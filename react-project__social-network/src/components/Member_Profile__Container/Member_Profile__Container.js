@@ -28,10 +28,10 @@ export default compose(
    connect((state) => {
       return (
          {
-            avatar: state.UsersListReducer.VievCurrentUser.avatar,
-            firstName: state.UsersListReducer.VievCurrentUser.firstName,
-            lastName: state.UsersListReducer.VievCurrentUser.lastName,
-            aboutMember: state.UsersListReducer.VievCurrentUser.previewtext,
+            avatar: state.UsersListReducer.VievCurrentUserMemberPage.avatar,
+            firstName: state.UsersListReducer.VievCurrentUserMemberPage.firstName,
+            lastName: state.UsersListReducer.VievCurrentUserMemberPage.lastName,
+            aboutMember: state.UsersListReducer.VievCurrentUserMemberPage.previewtext,
          }
       )
    }, { VievCurrentUserAC }),
