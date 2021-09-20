@@ -8,6 +8,7 @@ const SET_TOTAL_LIST_COUNT = 'SET_TOTAL_LIST_COUNT';
 const IS_FETCHING_STATUS = 'IS_FETCHING_STATUS';
 const IS_REQUEST_SUBS_BUTTON = 'IS_REQUEST_SUBS_BUTTON';
 const SET_CURRENT_USER_TO_OBJ = 'SET_CURRENT_USER_TO_OBJ';
+const SET_CURRENT_MEMBER_TO_OBJ = 'SET_CURRENT_MEMBER_TO_OBJ';
 
 
 let initialState = {
@@ -48,6 +49,8 @@ let UsersList = (state = initialState, action) => {
          return { ...state, UsersList: action.Users }
       case SET_CURRENT_USER_TO_OBJ:
          return { ...state, VievCurrentUserMemberPage: action.CurrentUser }
+      case SET_CURRENT_MEMBER_TO_OBJ:
+         return { ...state, VievCurrentUserMemberPage: {...state.VievCurrentUserMemberPage, status: action.CurrentUser} }
       case SET_CURRENT_PAGE:
          return { ...state, currentPage: action.PageNumb }
       case SET_TOTAL_LIST_COUNT:
@@ -72,6 +75,7 @@ export const FollowAC = (UserId) => ({ type: FOLLOW, UserId });                 
 export const UnFollowAC = (UserId) => ({ type: UN_FOLLOW, UserId });                                                 //unFollow action creator
 export const SetUsersAC = (Users) => ({ type: SET_USERS, Users });                                                   //set new user from server action creator
 export const VievCurrentUserAC = (CurrentUser) => ({ type: SET_CURRENT_USER_TO_OBJ, CurrentUser });                  //set new temporary user from member block action creator
+export const VievCurrentUserMemberPageAC = (CurrentUser) => ({ type: SET_CURRENT_MEMBER_TO_OBJ, CurrentUser });                  //set new temporary user from member block action creator
 export const SetCurrentPageAC = (PageNumb) => ({ type: SET_CURRENT_PAGE, PageNumb });                                //set Current page action creator
 export const SetTotalListCountAC = (TotalNumb) => ({ type: SET_TOTAL_LIST_COUNT, TotalNumb });                       //set x-total-count action creator
 export const IsFetchingStatusAC = (isFetching) => ({ type: IS_FETCHING_STATUS, isFetching });                        //set status response action creator

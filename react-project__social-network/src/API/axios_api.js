@@ -19,4 +19,7 @@ export const UserAPI = {                                          //? обьек
       return instance.get(`/${id}`)
          .then(response => (response.data))                          //*убираем с ответа всю информацию кроме данных
    },
+   patchStatusMember(id, status) {                                   //*отправляем новый статус определенного пользователя                    //* запрашивает оприделенного пользователя
+      return instance.patch(`/${id}`, { status: status })
+   },
 };
