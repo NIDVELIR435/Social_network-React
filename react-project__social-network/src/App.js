@@ -34,7 +34,7 @@ const App = () => {
           <Route path='/Companies' render={Companies} />
           <Route path='/Projects' render={Projects} />
           <Route path='/Jobs' render={Jobs} />
-          <Route path='/findUsers' render={() => (<With__FindUsers />)} />  //*HOC(high order component/ компонент высшего порядка)
+          <Route path='/findUsers' render={() => (<With__FindUsers />)} /> {/* //*HOC(high order component/ компонент высшего порядка) */}
           <Route path='/Notification' render={Notification} />
           <Route path='/Profile' render={Profile} />
           <Route path='/memberProfile/:UserId?' render={() => (<Member_Profile__Container />)} />
