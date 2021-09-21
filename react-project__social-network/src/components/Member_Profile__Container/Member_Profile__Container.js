@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import { VievCurrentUserAC, VievCurrentUserMemberPageAC } from '../../Redux/reducer/UsersList-reducer';
-import Member_Profile from './Member_profile__item/Member_Profile.jsx'
+import Member_Profile from './Member_profile__item/Member_Profile.jsx';
 import { UserAPI } from '../../API/axios_api';
 
 class ClassContainer__MemberProfile extends React.Component {           //* создаем класовую компоненту
@@ -20,9 +20,9 @@ class ClassContainer__MemberProfile extends React.Component {           //* со
          status={this.props.status}
          firstName={this.props.firstName}
          lastName={this.props.lastName}
-         aboutMember={this.props.aboutMember} 
+         aboutMember={this.props.aboutMember}
          VievCurrentUserMemberPageAC={this.props.VievCurrentUserMemberPageAC}
-         />
+      />
    }
 
 };
@@ -30,7 +30,7 @@ class ClassContainer__MemberProfile extends React.Component {           //* со
 export default compose(
    connect((state) => {
       return (
-         
+
          {
             avatar: state.UsersListReducer.VievCurrentUserMemberPage.avatar,
             status: state.UsersListReducer.VievCurrentUserMemberPage.status,
@@ -39,6 +39,6 @@ export default compose(
             aboutMember: state.UsersListReducer.VievCurrentUserMemberPage.previewtext,
          }
       )
-   }, { VievCurrentUserAC, VievCurrentUserMemberPageAC  }),
+   }, { VievCurrentUserAC, VievCurrentUserMemberPageAC }),
    withRouter,
 )(ClassContainer__MemberProfile);

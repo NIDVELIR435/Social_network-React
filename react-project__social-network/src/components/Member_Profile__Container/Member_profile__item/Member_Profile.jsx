@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import UserPhoto from '../../images/user.png'
-import { UserAPI } from './../../../API/axios_api';
+import { UserAPI } from '../../../API/axios_api';
 
 const FlexArea = styled.div`
    margin: 20px;
@@ -12,65 +12,65 @@ const Span = styled.span`
    color:#1ECEAB;
    `;
 const SpanToStatus = styled(Span)`
-   color:#1ECEAB;
-   border: 1px solid #1ECEAB;
+   border: 2px solid #1ECEAB;
+   background-color: #F2F2F2;
    border-radius: 0px 10px 10px 10px;
    padding: 5px;
    margin: 5px 0px 5px 70px;
    display: inline-block;
-   min-width: 100px;
+   min-width: 200px;
    text-align: center;
    `;
 const InputArea = styled.input`
-   border: 1px solid red;
-   border-radius: 5px;
+   color:blue;
+   border: 2px solid blue;
+   background-color: #F2F2F2;
+   border-radius: 0px 10px 10px 10px;
    padding: 5px;
+   min-width: 200px;
+   margin: 5px 0px 5px 70px;
+   text-align: center;
    `;
 const AboutMember = styled.div`
       color:#1ECEAC
    `;
+const leftAreaDiv = styled.div`
+   border: 1px solid #1ECEAB;
+   border-radius: 0px 10px 10px 10px;
+`;
 
-class Member_Profile extends React.Component {
-   state = {
-      editStatus: false
+function Member_Profile(props) {
+   let [state, setState] = useState(false);
+   function onChangeFUNC(e) {
+      props.VievCurrentUserMemberPageAC(e.target.value)
    }
-   editStatusFUNC = () => {
-      this.setState({
-         editStatus: true,
-      })
+   function onBlurFUNC(e) {
+      UserAPI.patchStatusMember(props.UserId, e.target.value);
+      setState(state = false)
    }
-   onChangeFUNC = (e) => {
-      this.props.VievCurrentUserMemberPageAC(e.target.value)
-   }
-   onBlurFUNC = (e) => {
-      UserAPI.patchStatusMember(this.props.UserId, e.target.value);
-      this.setState({
-         editStatus: false,
-      })
-   }
-   render() {
-      return <FlexArea>
-         <div className='left_area'>
+   return (
+      <FlexArea>
+         <leftAreaDiv>
             <div className='avatar'>
-               <img src={this.props.avatar != null ? this.props.avatar : UserPhoto} />
+               <img src={props.avatar != null ? props.avatar : UserPhoto} />
             </div>
             <div className='fullName'>
-               <Span>{this.props.firstName} {this.props.lastName}</Span>
+               <Span>{props.firstName} {props.lastName}</Span>
             </div>
-            {this.state.editStatus === true
+            {state === true
                ? <InputArea autoFocus
-                  onBlur={this.onBlurFUNC}                                    
-                  onChange={this.onChangeFUNC} value={this.props.status} />
-               : <SpanToStatus onDoubleClick={() => this.editStatusFUNC(true)}>
-                  {this.props.status ? this.props.status : 'Hello, visiter)'}
+                  onBlur={onBlurFUNC}
+                  onChange={onChangeFUNC} value={props.status} />
+               : <SpanToStatus onDoubleClick={() => { setState(state = true) }}>
+                  {props.status ? props.status : 'Hello, visiter)'}
                </SpanToStatus>
             }
-            <AboutMember>{this.props.aboutMember}</AboutMember>
-         </div >
+            <AboutMember>{props.aboutMember}</AboutMember>
+         </leftAreaDiv>
          <div className='right_area'>
             Right FlexArea area
          </div>
       </FlexArea>
-   }
-}
+   )
+};
 export default Member_Profile;
