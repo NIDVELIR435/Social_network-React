@@ -1,9 +1,8 @@
 import React from 'react'
-import s from "./Companies.module.css";
 
 const Companies = () => {
    return (
-      <div className={s.Companies}>
+      <div >
          <p> Companies page</p>
       </div>
    )

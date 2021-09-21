@@ -13,8 +13,8 @@ class FindUsersAPIContainer extends React.Component {
       this.props.onChangeTC(PageNumber, this.props.pageSize)
    }
 
-   render() {   
-      return <Users users={this.props.users}                                  
+   render() {
+      return <Users users={this.props.users}
          totalListCount={this.props.totalListCount}
          followTC={this.props.followTC}
          unfollowTC={this.props.unfollowTC}
@@ -33,7 +33,7 @@ class FindUsersAPIContainer extends React.Component {
 export default compose(                                        //* делаем цепь промисов
 
    connect((state) => {                                        //* создаем контейнерный HOC(компонент высшего порядка) и передаем в него два парам, что генерят стейт и диспатч
-      return { 
+      return {
          users: state.UsersListReducer.UsersList,
          pageSize: state.UsersListReducer.pageSize,
          totalListCount: state.UsersListReducer.totalListCount,
@@ -41,7 +41,7 @@ export default compose(                                        //* делаем 
          isFetching: state.UsersListReducer.isFetching,
          VievCurrentUser: state.UsersListReducer.VievCurrentUser,
       }
-   }, {                                     
+   }, {
       FollowAC, UnFollowAC, isRequestSubsButtonAC,
       getUsersTC, onChangeTC, followTC,
       unfollowTC,

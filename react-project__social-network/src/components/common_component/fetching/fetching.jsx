@@ -1,12 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
 import FetchingSVG from '../../images/Fetching.svg'
-import c from './fetching.module.css'
+
+const Fetching_div = styled.div`
+   margin-left: 10px;  `;
+const Img_styled = styled.img`
+   width: 50px;
+   height: 50px;  `;
 
 const Fetching = () => {
    return (
-      <div className={c.Fetching_div}>
-         <img src={FetchingSVG} alt="LoadingLogo" />
-      </div>
+      <Fetching_div>
+            <Img_styled src={FetchingSVG} alt="LoadingLogo" />
+      </Fetching_div>
    )
 };
 

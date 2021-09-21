@@ -1,9 +1,8 @@
 import React from 'react'
-import s from "./Jobs.module.css";
 
 const Jobs = () => {
    return (
-      <div className={s.Jobs}>
+      <div>
          <p> Jobs page</p>
       </div>
    )

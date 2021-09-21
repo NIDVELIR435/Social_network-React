@@ -24,8 +24,7 @@ const Header = () => {
             <div><NavLink to="/Messages" activeClassName={c.active}>Messages</NavLink></div>
             <div><NavLink to="/Notificatiom" activeClassName={c.active}>Notification</NavLink></div>
          </div>
-
-      </header >
+      </header>
    )
 };
 

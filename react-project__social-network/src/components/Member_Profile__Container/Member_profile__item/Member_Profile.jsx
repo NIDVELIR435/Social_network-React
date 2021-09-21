@@ -52,7 +52,7 @@ function Member_Profile(props) {
       <FlexArea>
          <leftAreaDiv>
             <div className='avatar'>
-               <img src={props.avatar != null ? props.avatar : UserPhoto} />
+               <img src={props.avatar != null ? props.avatar : UserPhoto} alt='avatar'/>
             </div>
             <div className='fullName'>
                <Span>{props.firstName} {props.lastName}</Span>
