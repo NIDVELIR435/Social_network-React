@@ -1,33 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { UnFollowAC, followTC, unfollowTC, FollowAC, isRequestSubsButtonAC, onChangeTC, getUsersTC } from '../../Redux/reducer/UsersList-reducer';
 
 import Users from './Users/Users';
 
-class FindUsersAPIContainer extends React.Component {
-   componentDidMount() {
-      this.props.getUsersTC(this.props.currentPage, this.props.pageSize);     //* обращаемся к THUNK creator что бы он создал санку и она подгрузила пользователей
-   }
-   onChangePage = (PageNumber) => {                                           //*меняет список и при нажатии на сгенерированую кнопку списка
-      this.props.onChangeTC(PageNumber, this.props.pageSize)
-   }
+function FindUsersAPIContainer(props) {
+   useEffect(() => {
+      props.getUsersTC(props.currentPage, props.pageSize);     //* обращаемся к THUNK creator что бы он создал санку и она подгрузила пользователей
+      console.log('effect')
+   }, [])
 
-   render() {
-      return <Users users={this.props.users}
-         totalListCount={this.props.totalListCount}
-         followTC={this.props.followTC}
-         unfollowTC={this.props.unfollowTC}
-         pageSize={this.props.pageSize}
-         currentPage={this.props.currentPage}
-         onChangePage={this.onChangePage}
-         UnFollowAC={this.props.UnFollowAC}
-         FollowAC={this.props.FollowAC}
-         isFetching={this.props.isFetching}
-         VievCurrentUser={this.props.VievCurrentUser}
-         isRequestSubsButtonAC={this.props.isRequestSubsButtonAC}
-      />
+   function onChangePage(PageNumber) {                                           //* replace list and after enter on botton list
+      props.onChangeTC(PageNumber, props.pageSize)
    }
+   return <Users users={props.users}
+      totalListCount={props.totalListCount}
+      followTC={props.followTC}
+      unfollowTC={props.unfollowTC}
+      pageSize={props.pageSize}
+      currentPage={props.currentPage}
+      onChangePage={onChangePage}
+      UnFollowAC={props.UnFollowAC}
+      FollowAC={props.FollowAC}
+      isFetching={props.isFetching}
+      VievCurrentUser={props.VievCurrentUser}
+      isRequestSubsButtonAC={props.isRequestSubsButtonAC}
+   />
 };
 
 export default compose(                                        //* делаем цепь промисов

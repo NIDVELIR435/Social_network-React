@@ -19,11 +19,12 @@ body .background .Center__styles {
 }
 
 body .background .container {
-  width: 1200px;
+  width: 100%;
   margin: 0px auto;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "h h h" "ml mc mr";
+      grid-template-areas: "h h h"
+ "ml mc mr";
   -ms-grid-columns: 1fr 3fr 1fr;
       grid-template-columns: 1fr 3fr 1fr;
 }

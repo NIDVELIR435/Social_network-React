@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import UserPhoto from '../../images/user.png'
 import { UserAPI } from '../../../API/axios_api';
@@ -34,25 +34,23 @@ const InputArea = styled.input`
 const AboutMember = styled.div`
       color:#1ECEAC
    `;
-const leftAreaDiv = styled.div`
-   border: 1px solid #1ECEAB;
+const LeftAreaDiv = styled.div`
    border-radius: 0px 10px 10px 10px;
 `;
 
 function Member_Profile(props) {
    let [state, setState] = useState(false);
-   function onChangeFUNC(e) {
-      props.VievCurrentUserMemberPageAC(e.target.value)
-   }
+
    function onBlurFUNC(e) {
+      setState(false)
       UserAPI.patchStatusMember(props.UserId, e.target.value);
-      setState(state = false)
    }
+
    return (
       <FlexArea>
-         <leftAreaDiv>
+         <LeftAreaDiv>
             <div className='avatar'>
-               <img src={props.avatar != null ? props.avatar : UserPhoto} alt='avatar'/>
+               <img src={props.avatar != null ? props.avatar : UserPhoto} alt='avatar' />
             </div>
             <div className='fullName'>
                <Span>{props.firstName} {props.lastName}</Span>
@@ -60,13 +58,14 @@ function Member_Profile(props) {
             {state === true
                ? <InputArea autoFocus
                   onBlur={onBlurFUNC}
-                  onChange={onChangeFUNC} value={props.status} />
-               : <SpanToStatus onDoubleClick={() => { setState(state = true) }}>
+                  onChange={(e) => props.VievCurrentUserMemberPageAC(e.target.value)}
+                  value={props.status} />
+               : <SpanToStatus onDoubleClick={() => setState(true)}>
                   {props.status ? props.status : 'Hello, visiter)'}
                </SpanToStatus>
             }
             <AboutMember>{props.aboutMember}</AboutMember>
-         </leftAreaDiv>
+         </LeftAreaDiv>
          <div className='right_area'>
             Right FlexArea area
          </div>
