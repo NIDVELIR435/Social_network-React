@@ -1,4 +1,4 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux'
+import { applyMiddleware, combineReducers, createStore, compose } from 'redux'
 import HomeBlockReducer from './reducer/HomeBlock-reducer';
 import MessageBlockReducer from './reducer/MessageBlock-reducer';
 import listSuggestionForPeople from './reducer/SuggestionsBlock-reducer';
@@ -14,6 +14,9 @@ let _reducers = combineReducers({ //combine ours redusers from redux store
    HomeBlockReducer: HomeBlockReducer,
    UsersListReducer: UsersList,
 });
-let Store = createStore(_reducers, applyMiddleware(thunkMiddleware)); //create redux Store and pass him combined reducer
-window.Store = Store;               //даёт возможность посмотреть через браузер, что есть в сторе
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const Store = createStore(_reducers,composeEnhancers(compose(applyMiddleware(thunkMiddleware)))); 
+window.__Store = Store;               //даёт возможность посмотреть через браузер, что есть в сторе
+
 export default Store;
