@@ -2,7 +2,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import s from './app.module.css';
-
 import Header from './components/Header/Header';
 import Main__rightGridBar from './components/Main/Main__rightBar/Main__rightBar.js'
 import Container__Messages from './components/Messages/Container__Messages.jsx';

@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-pascal-case */
 import React from 'react';
-import s from './Messages.module.css'; //export module style for this component
+import s from './Messages.module.css';
 import Dialog__item from './Dialog__item/Dialog__item';
 import Title_item from './Dialog__title/Title.js';
 

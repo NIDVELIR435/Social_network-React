@@ -9,10 +9,11 @@ import { UserAPI } from '../../API/axios_api';
 const MemberProfile__Hook = (props) => {           //* создаем класовую компоненту
 
    useEffect(() => {
-      UserAPI.getUsersFromMemberPage(props.match.params.UserId)
-         .then(res => {
-            props.VievCurrentUserAC(res)
-         })
+      async function fetch() {
+         let response = await UserAPI.getUsersFromMemberPage(props.match.params.UserId)
+         props.VievCurrentUserAC(response)
+      }
+      fetch();
    }, [props.match.params.UserId])
 
    return (

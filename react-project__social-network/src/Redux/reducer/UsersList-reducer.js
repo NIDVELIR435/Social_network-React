@@ -69,7 +69,7 @@ let UsersList = (state = initialState, action) => {
    }
 };
 
-//* создаем блок с action creator, что через себя буду передавать параметры в reducer
+//* create block with action creator, what through yourself passed parram in reducer
 
 export const FollowAC = (UserId) => ({ type: FOLLOW, UserId });                                                      //Follow action creator
 export const UnFollowAC = (UserId) => ({ type: UN_FOLLOW, UserId });                                                 //unFollow action creator
@@ -81,50 +81,42 @@ export const SetTotalListCountAC = (TotalNumb) => ({ type: SET_TOTAL_LIST_COUNT,
 export const IsFetchingStatusAC = (isFetching) => ({ type: IS_FETCHING_STATUS, isFetching });                        //set status response action creator
 export const isRequestSubsButtonAC = (isRequest, userId) => ({ type: IS_REQUEST_SUBS_BUTTON, isRequest, userId });   //set disabled button if fetching request to server action creator
 
-//* создаем Thunk, что будут выполнять асинхронные операции, вызывать dispatch и их передавать на выполнение в редюсер
+//*create Thunk, which do asink oparation, request dispatch and then take them to working in reducer
 
 export const getUsersTC = (currentPage, pageSize) => {              //это функция, что может принимать в себя параментры и создавать санку
-   return (dispatch) => {                                                  //это санка(thunk)
+   return async(dispatch) => {                                                  //thi is thunk
       dispatch(IsFetchingStatusAC(true));
-      UserAPI.getUsersList(currentPage, pageSize).then(response => {
+      let response = await UserAPI.getUsersList(currentPage, pageSize);         
          dispatch(IsFetchingStatusAC(false))
          dispatch(SetUsersAC(response.data))
          dispatch(SetTotalListCountAC(response.headers["x-total-count"]))   //? что бы найти целое число json списка, нужно найти свойство  header и обратиться к нему, как к елементу массива
-      })
    }
 };
 export const onChangeTC = (PageNumber, pageSize) => {              //это функция, что может принимать в себя параментры и создавать санку
-   return (dispatch) => {
+   return  async (dispatch) => {
       dispatch(SetCurrentPageAC(PageNumber));                                               //это санка(thunk)
       dispatch(IsFetchingStatusAC(true));
-      UserAPI.getUsersList(PageNumber, pageSize).then(response => {
+      let response = await UserAPI.getUsersList(PageNumber, pageSize);
          dispatch(IsFetchingStatusAC(false))
          dispatch(SetUsersAC(response.data))
-      })
    }
 };
 
 export const followTC = (Userid) => {                              //это функция, что может принимать в себя параментры и создавать санку
-   debugger;
-   return (dispatch) => {
+   return async (dispatch) => {
       dispatch(isRequestSubsButtonAC(true, Userid))
-      UserAPI.followStatus(Userid, true)
-         .then(() => {
+      let response = await UserAPI.followStatus(Userid, true)
             dispatch(FollowAC(Userid))
             dispatch(isRequestSubsButtonAC(false, Userid))
-         })
    }
 };
 
 export const unfollowTC = (Userid) => {                            //это функция, что может принимать в себя параментры и создавать санку
-   debugger;
-   return (dispatch) => {
+   return async (dispatch) => {
       dispatch(isRequestSubsButtonAC(true, Userid))
-      UserAPI.followStatus(Userid, false)
-         .then(() => {
+      let response = await UserAPI.followStatus(Userid, false);
             dispatch(UnFollowAC(Userid))
             dispatch(isRequestSubsButtonAC(false, Userid))
-         })
    }
 };
 

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import UserPhoto from '../../images/user.png'
-import { UserAPI } from '../../../API/axios_api';
+import { UserAPI } from '../../../API/axios_api';              //link to axios api
+
 
 function MemberProfile(props) {
    let [state, setState] = useState(false);                    //check to input status
@@ -80,17 +81,17 @@ const LeftAreaDiv = styled.div`
    border: 2px solid green;
    background-color:#F2F2F2;
    border-radius: 5px;
-`;
+   `;
 const RightAreaDiv = styled.div`
    border: 2px solid green;
    background-color:#F2F2F2;
    border-radius: 5px;
-`;
+   `;
 const AvatarImg = styled.div`
    width: 100px;
    height: 100px;
-`;
+   `;
 const Img = styled.img`
    width: 100%;
    height: 100%;
-`;
+   `;
