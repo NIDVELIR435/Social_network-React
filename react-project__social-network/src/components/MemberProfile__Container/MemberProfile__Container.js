@@ -1,29 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import { VievCurrentUserAC, VievCurrentUserMemberPageAC } from '../../Redux/reducer/UsersList-reducer';
-import MemberProfile from './Member_profile__item/Member_Profile.jsx';
+import MemberProfile from './Memberprofile__item/MemberProfile.jsx';
 import { UserAPI } from '../../API/axios_api';
 
-class ClassContainer__MemberProfile extends React.Component {           //* создаем класовую компоненту
-   componentDidMount() {
-      UserAPI.getUsersFromMemberPage(this.props.match.params.UserId)
-         .then(res => {
-            this.props.VievCurrentUserAC(res)
-         });
-   }
-   render() {
-      return <MemberProfile UserId={this.props.match.params.UserId}
-         avatar={this.props.avatar}
-         status={this.props.status}
-         firstName={this.props.firstName}
-         lastName={this.props.lastName}
-         aboutMember={this.props.aboutMember}
-         VievCurrentUserMemberPageAC={this.props.VievCurrentUserMemberPageAC}
-      />
-   }
+const MemberProfile__Hook = (props) => {           //* создаем класовую компоненту
 
+   useEffect(() => {
+      UserAPI.getUsersFromMemberPage(props.match.params.UserId)
+         .then(res => {
+            props.VievCurrentUserAC(res)
+         })
+   }, [props.match.params.UserId])
+
+   return (
+      <MemberProfile UserId={props.match.params.UserId}
+         avatar={props.avatar}
+         status={props.status}
+         firstName={props.firstName}
+         lastName={props.lastName}
+         aboutMember={props.aboutMember}
+         VievCurrentUserMemberPageAC={props.VievCurrentUserMemberPageAC}
+      />
+   )
 };
 
 export default compose(
@@ -39,4 +40,4 @@ export default compose(
       )
    }, { VievCurrentUserAC, VievCurrentUserMemberPageAC }),
    withRouter,
-)(ClassContainer__MemberProfile);
+)(MemberProfile__Hook);

@@ -13,9 +13,9 @@ import Jobs from './components/Jobs/Jobs';
 import Notification from './components/Notification/Notification';
 import Profile from './components/Profile/Profile';
 import Main__leftProfileNav_container from './components/Main/main_leftProfileNav/Main__leftProfileNav_container/Main__LeftProfileNav_container';
-// import Find_users__container from './components/FIND_USERS/find_users_container/find_users_container';
 import With__FindUsers from './components/find_users/find_users__composer';
-import Member_Profile__Container from './components/Member_Profile__Container/Member_Profile__Container';
+import MemberProfile__container from './components/MemberProfile__Container/MemberProfile__Container';
+
 
 const App = () => {
   return (
@@ -37,7 +37,7 @@ const App = () => {
           <Route path='/findUsers' render={() => (<With__FindUsers />)} /> {/* //*HOC(high order component/ компонент высшего порядка) */}
           <Route path='/Notification' render={Notification} />
           <Route path='/Profile' render={Profile} />
-          <Route path='/memberProfile/:UserId?' render={() => (<Member_Profile__Container />)} />
+          <Route path='/memberProfile/:UserId?' render={() => (<MemberProfile__container />)} />
         </div>
       </div>
     </div>

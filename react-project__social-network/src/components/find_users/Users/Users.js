@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import React from 'react';
 import Fetching from '../../common_component/fetching/fetching';
 import c from './Users.module.css';
