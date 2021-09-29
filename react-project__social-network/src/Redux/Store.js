@@ -1,3 +1,8 @@
+//* it`s concept how works redux store inside
+
+
+
+
 // import MessageBlockReducer from './reducer/MessageBlock-reducer.js';
 // import MessageBlockReducer from './reducer/MessageBlock-reducer';
 // import HomeBlockReducer from './reducer/HomeBlock-reducer';
@@ -36,7 +41,7 @@
       //    { Message: 'It`s my first post', LikeCount: "1" },
       //    { Message: 'It`s my second post', LikeCount: "2" }
       // ],
-      
+
       // NewPostText: "value for posts",
       // TextAreaCenterNewsValue: 'TextAreaCenterNewsValue',
 //    },

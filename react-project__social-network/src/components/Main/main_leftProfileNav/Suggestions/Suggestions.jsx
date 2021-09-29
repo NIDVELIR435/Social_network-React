@@ -1,17 +1,31 @@
 import React from 'react'
+import styled from 'styled-components';
 import People from './PeopleList/People';
-import c from './Suggestions.module.css';
 
 const Suggestions = (props) => {
    return (
-      <div className={c.Suggestions}>
-         <div className={c.Name}>
+      <SuggestionsDIV theme_mode={props.theme_mode}>
+         <NameDIV>
             Suggestions
-         </div>
+         </NameDIV>
          <div>
             <People Suggestions={props.Suggestions} />
          </div>
-      </div>
+      </SuggestionsDIV>
    )
 }
 export default Suggestions;
+
+const SuggestionsDIV = styled.div`
+   text-align: center;
+   font-size: larger;
+   background-color: ${props => props.theme_mode ? '#808080' : 'white'};
+   padding: 15px 0px;
+   margin-bottom: 2px;
+   padding-bottom: 5px;
+`;
+const NameDIV = styled.div`
+     text-align: left;
+  padding-bottom: 10px;
+  padding-left: 10px;
+`;

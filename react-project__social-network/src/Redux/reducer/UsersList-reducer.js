@@ -10,7 +10,6 @@ const IS_REQUEST_SUBS_BUTTON = 'IS_REQUEST_SUBS_BUTTON';
 const SET_CURRENT_USER_TO_OBJ = 'SET_CURRENT_USER_TO_OBJ';
 const SET_CURRENT_MEMBER_TO_OBJ = 'SET_CURRENT_MEMBER_TO_OBJ';
 
-
 let initialState = {
    UsersList: [],
    pageSize: 10,
@@ -20,7 +19,6 @@ let initialState = {
    isRequestSubsButton: [],
    VievCurrentUser: [],
    VievCurrentUserMemberPage: [],
-
 };
 
 let UsersList = (state = initialState, action) => {

@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,UAAU,CAAC;EACR,UAAU,EAAE,MAAM;EAClB,SAAS,EAAE,MAAM;EACjB,gBAAgB,EAAE,IAAI;EACtB,OAAO,EAAE,QAAQ;EACjB,aAAa,EAAE,GAAG;CAOpB;;AAZD,AAMG,UANO,CAMP,cAAc,CAAC;EACZ,KAAK,EAAE,OAAO;EACd,aAAa,EAAE,GAAG;CACpB",
-    "sources": [
-        "Followers.module.scss"
-    ],
-    "names": [],
-    "file": "Followers.module.css"
-}
